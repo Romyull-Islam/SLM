@@ -1,0 +1,2088 @@
+<html>
+	<head>
+		<title>nmonChart</title>
+<script>
+function config() {
+    var myWindow = window.open("", "MsgWindow", "width=1024, height=800");
+    myWindow.document.write("<h2>Configuration data for phi22.nmon <br>Use PageDown or Scroll bar (if available)</h2><br>\
+<b>progname</b> = nmon<br>\
+<b>command</b> = nmon -f -s 1 -c 50 <br>\
+<b>version</b> = 16n<br>\
+<b>disks_per_line</b> = 150<br>\
+<b>max_disks</b> = 256<br>\
+<b>disks</b> = 31<br>\
+<b>host</b> = ubuntu<br>\
+<b>user</b> = ksu<br>\
+<b>OS</b> = Linux<br>\
+<b>runname</b> = ubuntu<br>\
+<b>time</b> = 06:39.09<br>\
+<b>date</b> = 13-MAR-2024<br>\
+<b>interval</b> = 1<br>\
+<b>snapshots</b> = 50<br>\
+<b>cpus</b> = 8<br>\
+<b>proc_stat_variables</b> = 8<br>\
+<b>boottime</b> = 11:21 AM 12-Mar-2024<br>\
+000 <b>/etc/release</b> <br>\
+001 <b>/etc/release</b> DISTRIB_ID=Ubuntu<br>\
+002 <b>/etc/release</b> DISTRIB_RELEASE=22.04<br>\
+003 <b>/etc/release</b> DISTRIB_CODENAME=jammy<br>\
+004 <b>/etc/release</b> DISTRIB_DESCRIPTION=QUbuntu 22.04.3 LTSQ<br>\
+005 <b>/etc/release</b> # R36 (release)<br>\
+006 <b>/etc/release</b> # KERNEL_VARIANT: oot<br>\
+007 <b>/etc/release</b> TARGET_USERSPACE_LIB_DIR=nvidia<br>\
+008 <b>/etc/release</b> TARGET_USERSPACE_LIB_DIR_PATH=usr/lib/aarch64-linux-gnu/nvidia<br>\
+009 <b>/etc/release</b> PRETTY_NAME=QUbuntu 22.04.3 LTSQ<br>\
+010 <b>/etc/release</b> NAME=QUbuntuQ<br>\
+011 <b>/etc/release</b> VERSION_ID=Q22.04Q<br>\
+012 <b>/etc/release</b> VERSION=Q22.04.3 LTS (Jammy Jellyfish)Q<br>\
+013 <b>/etc/release</b> VERSION_CODENAME=jammy<br>\
+014 <b>/etc/release</b> ID=ubuntu<br>\
+015 <b>/etc/release</b> ID_LIKE=debian<br>\
+016 <b>/etc/release</b> HOME_URL=Qhttps://www.ubuntu.com/Q<br>\
+017 <b>/etc/release</b> SUPPORT_URL=Qhttps://help.ubuntu.com/Q<br>\
+018 <b>/etc/release</b> BUG_REPORT_URL=Qhttps://bugs.launchpad.net/ubuntu/Q<br>\
+019 <b>/etc/release</b> PRIVACY_POLICY_URL=Qhttps://www.ubuntu.com/legal/terms-and-policies/privacy-policyQ<br>\
+020 <b>/etc/release</b> UBUNTU_CODENAME=jammy<br>\
+021 <b>lsb_release</b> <br>\
+022 <b>fdisk-l</b> <br>\
+023 <b>lsblk</b> <br>\
+024 <b>lsblk</b> NAME         MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS<br>\
+025 <b>lsblk</b> loop0          7:0    0  59.7M  1 loop /snap/core20/2107<br>\
+026 <b>lsblk</b> loop1          7:1    0  35.2M  1 loop /snap/snapd/20674<br>\
+027 <b>lsblk</b> loop2          7:2    0    64M  1 loop /snap/sublime-text/138<br>\
+028 <b>lsblk</b> loop3          7:3    0    64M  1 loop /snap/sublime-text/157<br>\
+029 <b>lsblk</b> loop4          7:4    0    16M  1 loop <br>\
+030 <b>lsblk</b> mmcblk3      179:0    0  59.3G  0 disk <br>\
+031 <b>lsblk</b> ├─mmcblk3p1  179:1    0  57.8G  0 part /<br>\
+032 <b>lsblk</b> ├─mmcblk3p2  179:2    0   128M  0 part <br>\
+033 <b>lsblk</b> ├─mmcblk3p3  179:3    0   768K  0 part <br>\
+034 <b>lsblk</b> ├─mmcblk3p4  179:4    0  31.6M  0 part <br>\
+035 <b>lsblk</b> ├─mmcblk3p5  179:5    0   128M  0 part <br>\
+036 <b>lsblk</b> ├─mmcblk3p6  179:6    0   768K  0 part <br>\
+037 <b>lsblk</b> ├─mmcblk3p7  179:7    0  31.6M  0 part <br>\
+038 <b>lsblk</b> ├─mmcblk3p8  179:8    0    80M  0 part <br>\
+039 <b>lsblk</b> ├─mmcblk3p9  179:9    0   512K  0 part <br>\
+040 <b>lsblk</b> ├─mmcblk3p10 179:10   0    64M  0 part <br>\
+041 <b>lsblk</b> ├─mmcblk3p11 179:11   0    80M  0 part <br>\
+042 <b>lsblk</b> ├─mmcblk3p12 179:12   0   512K  0 part <br>\
+043 <b>lsblk</b> ├─mmcblk3p13 179:13   0    64M  0 part <br>\
+044 <b>lsblk</b> ├─mmcblk3p14 179:14   0   400M  0 part <br>\
+045 <b>lsblk</b> └─mmcblk3p15 179:15   0 479.5M  0 part <br>\
+046 <b>lsblk</b> mmcblk3boot0 179:32   0  31.5M  1 disk <br>\
+047 <b>lsblk</b> mmcblk3boot1 179:64   0  31.5M  1 disk <br>\
+048 <b>lsblk</b> zram0        252:0    0   1.9G  0 disk [SWAP]<br>\
+049 <b>lsblk</b> zram1        252:1    0   1.9G  0 disk [SWAP]<br>\
+050 <b>lsblk</b> zram2        252:2    0   1.9G  0 disk [SWAP]<br>\
+051 <b>lsblk</b> zram3        252:3    0   1.9G  0 disk [SWAP]<br>\
+052 <b>lsblk</b> zram4        252:4    0   1.9G  0 disk [SWAP]<br>\
+053 <b>lsblk</b> zram5        252:5    0   1.9G  0 disk [SWAP]<br>\
+054 <b>lsblk</b> zram6        252:6    0   1.9G  0 disk [SWAP]<br>\
+055 <b>lsblk</b> zram7        252:7    0   1.9G  0 disk [SWAP]<br>\
+056 <b>lscpu</b> <br>\
+057 <b>lscpu</b> Architecture:                       aarch64<br>\
+058 <b>lscpu</b> CPU op-mode(s):                     32-bit<br>\
+059 <b>lscpu</b> Byte Order:                         Little Endian<br>\
+060 <b>lscpu</b> CPU(s):                             12<br>\
+061 <b>lscpu</b> On-line CPU(s) list:                0-7<br>\
+062 <b>lscpu</b> Off-line CPU(s) list:               8-11<br>\
+063 <b>lscpu</b> Vendor ID:                          ARM<br>\
+064 <b>lscpu</b> Model name:                         Cortex-A78AE<br>\
+065 <b>lscpu</b> Model:                              1<br>\
+066 <b>lscpu</b> Thread(s) per core:                 1<br>\
+067 <b>lscpu</b> Core(s) per cluster:                4<br>\
+068 <b>lscpu</b> Socket(s):                          -<br>\
+069 <b>lscpu</b> Cluster(s):                         2<br>\
+070 <b>lscpu</b> Stepping:                           r0p1<br>\
+071 <b>lscpu</b> CPU max MHz:                        2201.6001<br>\
+072 <b>lscpu</b> CPU min MHz:                        115.2000<br>\
+073 <b>lscpu</b> BogoMIPS:                           62.50<br>\
+074 <b>lscpu</b> Flags:                              fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm lrcpc dcpop asimddp uscat ilrcpc flagm paca pacg<br>\
+075 <b>lscpu</b> L1d cache:                          512 KiB (8 instances)<br>\
+076 <b>lscpu</b> L1i cache:                          512 KiB (8 instances)<br>\
+077 <b>lscpu</b> L2 cache:                           2 MiB (8 instances)<br>\
+078 <b>lscpu</b> L3 cache:                           4 MiB (2 instances)<br>\
+079 <b>lscpu</b> NUMA node(s):                       1<br>\
+080 <b>lscpu</b> NUMA node0 CPU(s):                  0-7<br>\
+081 <b>lscpu</b> Vulnerability Gather data sampling: Not affected<br>\
+082 <b>lscpu</b> Vulnerability Itlb multihit:        Not affected<br>\
+083 <b>lscpu</b> Vulnerability L1tf:                 Not affected<br>\
+084 <b>lscpu</b> Vulnerability Mds:                  Not affected<br>\
+085 <b>lscpu</b> Vulnerability Meltdown:             Not affected<br>\
+086 <b>lscpu</b> Vulnerability Mmio stale data:      Not affected<br>\
+087 <b>lscpu</b> Vulnerability Retbleed:             Not affected<br>\
+088 <b>lscpu</b> Vulnerability Spec rstack overflow: Not affected<br>\
+089 <b>lscpu</b> Vulnerability Spec store bypass:    Mitigation; Speculative Store Bypass disabled via prctl<br>\
+090 <b>lscpu</b> Vulnerability Spectre v1:           Mitigation; __user pointer sanitization<br>\
+091 <b>lscpu</b> Vulnerability Spectre v2:           Mitigation; CSV2<br>\
+092 <b>lscpu</b> Vulnerability Srbds:                Not affected<br>\
+093 <b>lscpu</b> Vulnerability Tsx async abort:      Not affected<br>\
+094 <b>lshw</b> <br>\
+095 <b>/proc/cpuinfo</b> <br>\
+096 <b>/proc/cpuinfo</b> processor	: 0<br>\
+097 <b>/proc/cpuinfo</b> BogoMIPS	: 62.50<br>\
+098 <b>/proc/cpuinfo</b> Features	: fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm lrcpc dcpop asimddp uscat ilrcpc flagm paca pacg<br>\
+099 <b>/proc/cpuinfo</b> CPU implementer	: 0x41<br>\
+100 <b>/proc/cpuinfo</b> CPU architecture: 8<br>\
+101 <b>/proc/cpuinfo</b> CPU variant	: 0x0<br>\
+102 <b>/proc/cpuinfo</b> CPU part	: 0xd42<br>\
+103 <b>/proc/cpuinfo</b> CPU revision	: 1<br>\
+104 <b>/proc/cpuinfo</b> <br>\
+105 <b>/proc/cpuinfo</b> processor	: 1<br>\
+106 <b>/proc/cpuinfo</b> BogoMIPS	: 62.50<br>\
+107 <b>/proc/cpuinfo</b> Features	: fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm lrcpc dcpop asimddp uscat ilrcpc flagm paca pacg<br>\
+108 <b>/proc/cpuinfo</b> CPU implementer	: 0x41<br>\
+109 <b>/proc/cpuinfo</b> CPU architecture: 8<br>\
+110 <b>/proc/cpuinfo</b> CPU variant	: 0x0<br>\
+111 <b>/proc/cpuinfo</b> CPU part	: 0xd42<br>\
+112 <b>/proc/cpuinfo</b> CPU revision	: 1<br>\
+113 <b>/proc/cpuinfo</b> <br>\
+114 <b>/proc/cpuinfo</b> processor	: 2<br>\
+115 <b>/proc/cpuinfo</b> BogoMIPS	: 62.50<br>\
+116 <b>/proc/cpuinfo</b> Features	: fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm lrcpc dcpop asimddp uscat ilrcpc flagm paca pacg<br>\
+117 <b>/proc/cpuinfo</b> CPU implementer	: 0x41<br>\
+118 <b>/proc/cpuinfo</b> CPU architecture: 8<br>\
+119 <b>/proc/cpuinfo</b> CPU variant	: 0x0<br>\
+120 <b>/proc/cpuinfo</b> CPU part	: 0xd42<br>\
+121 <b>/proc/cpuinfo</b> CPU revision	: 1<br>\
+122 <b>/proc/cpuinfo</b> <br>\
+123 <b>/proc/cpuinfo</b> processor	: 3<br>\
+124 <b>/proc/cpuinfo</b> BogoMIPS	: 62.50<br>\
+125 <b>/proc/cpuinfo</b> Features	: fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm lrcpc dcpop asimddp uscat ilrcpc flagm paca pacg<br>\
+126 <b>/proc/cpuinfo</b> CPU implementer	: 0x41<br>\
+127 <b>/proc/cpuinfo</b> CPU architecture: 8<br>\
+128 <b>/proc/cpuinfo</b> CPU variant	: 0x0<br>\
+129 <b>/proc/cpuinfo</b> CPU part	: 0xd42<br>\
+130 <b>/proc/cpuinfo</b> CPU revision	: 1<br>\
+131 <b>/proc/cpuinfo</b> <br>\
+132 <b>/proc/cpuinfo</b> processor	: 4<br>\
+133 <b>/proc/cpuinfo</b> BogoMIPS	: 62.50<br>\
+134 <b>/proc/cpuinfo</b> Features	: fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm lrcpc dcpop asimddp uscat ilrcpc flagm paca pacg<br>\
+135 <b>/proc/cpuinfo</b> CPU implementer	: 0x41<br>\
+136 <b>/proc/cpuinfo</b> CPU architecture: 8<br>\
+137 <b>/proc/cpuinfo</b> CPU variant	: 0x0<br>\
+138 <b>/proc/cpuinfo</b> CPU part	: 0xd42<br>\
+139 <b>/proc/cpuinfo</b> CPU revision	: 1<br>\
+140 <b>/proc/cpuinfo</b> <br>\
+141 <b>/proc/cpuinfo</b> processor	: 5<br>\
+142 <b>/proc/cpuinfo</b> BogoMIPS	: 62.50<br>\
+143 <b>/proc/cpuinfo</b> Features	: fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm lrcpc dcpop asimddp uscat ilrcpc flagm paca pacg<br>\
+144 <b>/proc/cpuinfo</b> CPU implementer	: 0x41<br>\
+145 <b>/proc/cpuinfo</b> CPU architecture: 8<br>\
+146 <b>/proc/cpuinfo</b> CPU variant	: 0x0<br>\
+147 <b>/proc/cpuinfo</b> CPU part	: 0xd42<br>\
+148 <b>/proc/cpuinfo</b> CPU revision	: 1<br>\
+149 <b>/proc/cpuinfo</b> <br>\
+150 <b>/proc/cpuinfo</b> processor	: 6<br>\
+151 <b>/proc/cpuinfo</b> BogoMIPS	: 62.50<br>\
+152 <b>/proc/cpuinfo</b> Features	: fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm lrcpc dcpop asimddp uscat ilrcpc flagm paca pacg<br>\
+153 <b>/proc/cpuinfo</b> CPU implementer	: 0x41<br>\
+154 <b>/proc/cpuinfo</b> CPU architecture: 8<br>\
+155 <b>/proc/cpuinfo</b> CPU variant	: 0x0<br>\
+156 <b>/proc/cpuinfo</b> CPU part	: 0xd42<br>\
+157 <b>/proc/cpuinfo</b> CPU revision	: 1<br>\
+158 <b>/proc/cpuinfo</b> <br>\
+159 <b>/proc/cpuinfo</b> processor	: 7<br>\
+160 <b>/proc/cpuinfo</b> BogoMIPS	: 62.50<br>\
+161 <b>/proc/cpuinfo</b> Features	: fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm lrcpc dcpop asimddp uscat ilrcpc flagm paca pacg<br>\
+162 <b>/proc/cpuinfo</b> CPU implementer	: 0x41<br>\
+163 <b>/proc/cpuinfo</b> CPU architecture: 8<br>\
+164 <b>/proc/cpuinfo</b> CPU variant	: 0x0<br>\
+165 <b>/proc/cpuinfo</b> CPU part	: 0xd42<br>\
+166 <b>/proc/cpuinfo</b> CPU revision	: 1<br>\
+167 <b>/proc/cpuinfo</b> <br>\
+168 <b>/proc/meminfo</b> <br>\
+169 <b>/proc/meminfo</b> MemTotal:       31434324 kB<br>\
+170 <b>/proc/meminfo</b> MemFree:        19144100 kB<br>\
+171 <b>/proc/meminfo</b> MemAvailable:   28176064 kB<br>\
+172 <b>/proc/meminfo</b> Buffers:          249092 kB<br>\
+173 <b>/proc/meminfo</b> Cached:          8628028 kB<br>\
+174 <b>/proc/meminfo</b> SwapCached:            0 kB<br>\
+175 <b>/proc/meminfo</b> Active:          4941400 kB<br>\
+176 <b>/proc/meminfo</b> Inactive:        5119664 kB<br>\
+177 <b>/proc/meminfo</b> Active(anon):       5632 kB<br>\
+178 <b>/proc/meminfo</b> Inactive(anon):  1245144 kB<br>\
+179 <b>/proc/meminfo</b> Active(file):    4935768 kB<br>\
+180 <b>/proc/meminfo</b> Inactive(file):  3874520 kB<br>\
+181 <b>/proc/meminfo</b> Unevictable:       24988 kB<br>\
+182 <b>/proc/meminfo</b> Mlocked:               0 kB<br>\
+183 <b>/proc/meminfo</b> SwapTotal:      15717152 kB<br>\
+184 <b>/proc/meminfo</b> SwapFree:       15717152 kB<br>\
+185 <b>/proc/meminfo</b> Dirty:                 0 kB<br>\
+186 <b>/proc/meminfo</b> Writeback:             0 kB<br>\
+187 <b>/proc/meminfo</b> AnonPages:       1171688 kB<br>\
+188 <b>/proc/meminfo</b> Mapped:           338304 kB<br>\
+189 <b>/proc/meminfo</b> Shmem:             41844 kB<br>\
+190 <b>/proc/meminfo</b> KReclaimable:     597260 kB<br>\
+191 <b>/proc/meminfo</b> Slab:             781564 kB<br>\
+192 <b>/proc/meminfo</b> SReclaimable:     597260 kB<br>\
+193 <b>/proc/meminfo</b> SUnreclaim:       184304 kB<br>\
+194 <b>/proc/meminfo</b> KernelStack:       12080 kB<br>\
+195 <b>/proc/meminfo</b> PageTables:        23936 kB<br>\
+196 <b>/proc/meminfo</b> NFS_Unstable:          0 kB<br>\
+197 <b>/proc/meminfo</b> Bounce:                0 kB<br>\
+198 <b>/proc/meminfo</b> WritebackTmp:          0 kB<br>\
+199 <b>/proc/meminfo</b> CommitLimit:    31434312 kB<br>\
+200 <b>/proc/meminfo</b> Committed_AS:    6282488 kB<br>\
+201 <b>/proc/meminfo</b> VmallocTotal:   133143592960 kB<br>\
+202 <b>/proc/meminfo</b> VmallocUsed:      137872 kB<br>\
+203 <b>/proc/meminfo</b> VmallocChunk:          0 kB<br>\
+204 <b>/proc/meminfo</b> Percpu:            11904 kB<br>\
+205 <b>/proc/meminfo</b> HardwareCorrupted:     0 kB<br>\
+206 <b>/proc/meminfo</b> AnonHugePages:    643072 kB<br>\
+207 <b>/proc/meminfo</b> ShmemHugePages:        0 kB<br>\
+208 <b>/proc/meminfo</b> ShmemPmdMapped:        0 kB<br>\
+209 <b>/proc/meminfo</b> FileHugePages:         0 kB<br>\
+210 <b>/proc/meminfo</b> FilePmdMapped:         0 kB<br>\
+211 <b>/proc/meminfo</b> CmaTotal:         262144 kB<br>\
+212 <b>/proc/meminfo</b> CmaFree:          126544 kB<br>\
+213 <b>/proc/meminfo</b> HugePages_Total:       0<br>\
+214 <b>/proc/meminfo</b> HugePages_Free:        0<br>\
+215 <b>/proc/meminfo</b> HugePages_Rsvd:        0<br>\
+216 <b>/proc/meminfo</b> HugePages_Surp:        0<br>\
+217 <b>/proc/meminfo</b> Hugepagesize:       2048 kB<br>\
+218 <b>/proc/meminfo</b> Hugetlb:               0 kB<br>\
+219 <b>/proc/stat</b> <br>\
+220 <b>/proc/stat</b> cpu  644914 9591 314595 54376442 33082 61976 49140 0 0 0<br>\
+221 <b>/proc/stat</b> cpu0 69046 901 39896 6764361 4087 30320 26015 0 0 0<br>\
+222 <b>/proc/stat</b> cpu1 82118 1298 31967 6797009 3889 7756 8848 0 0 0<br>\
+223 <b>/proc/stat</b> cpu2 70118 2009 50591 6799284 3906 4283 2200 0 0 0<br>\
+224 <b>/proc/stat</b> cpu3 88807 1593 78420 6755494 5979 3925 1499 0 0 0<br>\
+225 <b>/proc/stat</b> cpu4 89528 921 38259 6800694 2912 3339 1564 0 0 0<br>\
+226 <b>/proc/stat</b> cpu5 82520 1125 24970 6810497 4795 5666 5875 0 0 0<br>\
+227 <b>/proc/stat</b> cpu6 80263 929 25293 6823786 2662 3372 1726 0 0 0<br>\
+228 <b>/proc/stat</b> cpu7 82422 812 24962 6821062 4763 3302 1402 0 0 0<br>\
+229 <b>/proc/stat</b> intr 94180632 0 378540 30706107 0 0 0 1643028 0 0 0 0 0 0 49150291 1919 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 83 0 0 0 0 2 1532 0 159323 217170 0 0 229474 0 2438420 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4415 0 0 0 0 2297 0 0 0 0 0 0 0 0 0 0 0 0 0 3637650 132 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 161053 411183 0 0 0 0 0 0 0 0 0 0 0 103 0 0 0 0 0 826508 0 0 0 0 0 0 0 0 0 239 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3798330 412394 435 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2<br>\
+230 <b>/proc/stat</b> ctxt 110869247<br>\
+231 <b>/proc/stat</b> btime 1710256903<br>\
+232 <b>/proc/stat</b> processes 31753<br>\
+233 <b>/proc/stat</b> procs_running 1<br>\
+234 <b>/proc/stat</b> procs_blocked 0<br>\
+235 <b>/proc/stat</b> softirq 56994185 3828482 21043597 50 2616135 155747 4 420236 20191876 2299 8735759<br>\
+236 <b>/proc/version</b> <br>\
+237 <b>/proc/version</b> Linux version 5.15.122-tegra (buildbrain@mobile-u64-6571-d7000) (aarch64-buildroot-linux-gnu-gcc.br_real (Buildroot 2022.08) 11.3.0<br>\
+238 <b>/proc/net/dev</b> <br>\
+239 <b>/proc/net/dev</b> Inter-|   Receive                                                |  Transmit<br>\
+240 <b>/proc/net/dev</b>  face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed<br>\
+241 <b>/proc/net/dev</b>     lo: 1448601   16727    0    0    0     0          0         0  1448601   16727    0    0    0     0       0          0<br>\
+242 <b>/proc/net/dev</b>   can0:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0<br>\
+243 <b>/proc/net/dev</b>   can1:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0<br>\
+244 <b>/proc/net/dev</b>  wlan0: 6503523542 1079246    0  101    0     0          0         0 191262781  265615    0    0    0     0       0          0<br>\
+245 <b>/proc/net/dev</b>   eth0:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0<br>\
+246 <b>/proc/net/dev</b> l4tbr0:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0<br>\
+247 <b>/proc/net/dev</b>   usb0:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0<br>\
+248 <b>/proc/net/dev</b>   usb1:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0<br>\
+249 <b>/proc/net/dev</b> docker0:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0<br>\
+250 <b>/proc/diskinfo</b> <br>\
+251 <b>/proc/diskstats</b> <br>\
+252 <b>/proc/diskstats</b>    7       0 loop0 49 0 724 17 0 0 0 0 0 32 17 0 0 0 0 0 0<br>\
+253 <b>/proc/diskstats</b>    7       1 loop1 374 0 25058 96 0 0 0 0 0 1144 96 0 0 0 0 0 0<br>\
+254 <b>/proc/diskstats</b>    7       2 loop2 43 0 702 12 0 0 0 0 0 32 12 0 0 0 0 0 0<br>\
+255 <b>/proc/diskstats</b>    7       3 loop3 55 0 816 20 0 0 0 0 0 40 20 0 0 0 0 0 0<br>\
+256 <b>/proc/diskstats</b>    7       4 loop4 186 0 1363 227 66 0 67 8 0 248 235 0 0 0 0 0 0<br>\
+257 <b>/proc/diskstats</b>    7       5 loop5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0<br>\
+258 <b>/proc/diskstats</b>    7       6 loop6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0<br>\
+259 <b>/proc/diskstats</b>    7       7 loop7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0<br>\
+260 <b>/proc/diskstats</b>  179       0 mmcblk3 49939 16037 3799786 77765 99775 109655 21427216 6772638 0 366648 6888321 1219 225 29458992 30584 10372 7332<br>\
+261 <b>/proc/diskstats</b>  179       1 mmcblk3p1 48594 16037 3725234 76081 99775 109655 21427216 6772638 0 366412 6879304 1219 225 29458992 30584 0 0<br>\
+262 <b>/proc/diskstats</b>  179       2 mmcblk3p2 112 0 8320 166 0 0 0 0 0 192 166 0 0 0 0 0 0<br>\
+263 <b>/proc/diskstats</b>  179       3 mmcblk3p3 48 0 384 52 0 0 0 0 0 80 52 0 0 0 0 0 0<br>\
+264 <b>/proc/diskstats</b>  179       4 mmcblk3p4 92 0 2336 116 0 0 0 0 0 108 116 0 0 0 0 0 0<br>\
+265 <b>/proc/diskstats</b>  179       5 mmcblk3p5 112 0 8320 188 0 0 0 0 0 164 188 0 0 0 0 0 0<br>\
+266 <b>/proc/diskstats</b>  179       6 mmcblk3p6 48 0 384 28 0 0 0 0 0 60 28 0 0 0 0 0 0<br>\
+267 <b>/proc/diskstats</b>  179       7 mmcblk3p7 92 0 2336 93 0 0 0 0 0 88 93 0 0 0 0 0 0<br>\
+268 <b>/proc/diskstats</b>  179       8 mmcblk3p8 112 0 8320 135 0 0 0 0 0 116 135 0 0 0 0 0 0<br>\
+269 <b>/proc/diskstats</b>  179       9 mmcblk3p9 44 0 352 54 0 0 0 0 0 80 54 0 0 0 0 0 0<br>\
+270 <b>/proc/diskstats</b>  179      10 mmcblk3p10 112 0 8320 180 0 0 0 0 0 172 180 0 0 0 0 0 0<br>\
+271 <b>/proc/diskstats</b>  179      11 mmcblk3p11 112 0 8320 119 0 0 0 0 0 116 119 0 0 0 0 0 0<br>\
+272 <b>/proc/diskstats</b>  179      12 mmcblk3p12 44 0 352 18 0 0 0 0 0 44 18 0 0 0 0 0 0<br>\
+273 <b>/proc/diskstats</b>  179      13 mmcblk3p13 112 0 8320 148 0 0 0 0 0 128 148 0 0 0 0 0 0<br>\
+274 <b>/proc/diskstats</b>  179      14 mmcblk3p14 112 0 8320 194 0 0 0 0 0 148 194 0 0 0 0 0 0<br>\
+275 <b>/proc/diskstats</b>  179      15 mmcblk3p15 112 0 8320 136 0 0 0 0 0 124 136 0 0 0 0 0 0<br>\
+276 <b>/proc/diskstats</b>  179      32 mmcblk3boot0 34 0 672 11 0 0 0 0 0 12 11 0 0 0 0 0 0<br>\
+277 <b>/proc/diskstats</b>  179      64 mmcblk3boot1 34 0 672 11 0 0 0 0 0 12 11 0 0 0 0 0 0<br>\
+278 <b>/proc/diskstats</b>  252       0 zram0 298 0 2384 0 1 0 8 0 0 8 0 0 0 0 0 0 0<br>\
+279 <b>/proc/diskstats</b>  252       1 zram1 298 0 2384 0 1 0 8 0 0 8 0 0 0 0 0 0 0<br>\
+280 <b>/proc/diskstats</b>  252       2 zram2 298 0 2384 0 1 0 8 0 0 8 0 0 0 0 0 0 0<br>\
+281 <b>/proc/diskstats</b>  252       3 zram3 298 0 2384 0 1 0 8 0 0 8 0 0 0 0 0 0 0<br>\
+282 <b>/proc/diskstats</b>  252       4 zram4 298 0 2384 0 1 0 8 0 0 8 0 0 0 0 0 0 0<br>\
+283 <b>/proc/diskstats</b>  252       5 zram5 298 0 2384 0 1 0 8 0 0 8 0 0 0 0 0 0 0<br>\
+284 <b>/proc/diskstats</b>  252       6 zram6 298 0 2384 0 1 0 8 0 0 8 0 0 0 0 0 0 0<br>\
+285 <b>/proc/diskstats</b>  252       7 zram7 298 0 2384 0 1 0 8 0 0 8 0 0 0 0 0 0 0<br>\
+286 <b>/sbin/multipath</b> <br>\
+287 <b>/dev/mapper</b> <br>\
+288 <b>/dev/mapper</b> total 0<br>\
+289 <b>/dev/mapper</b> crw------- 1 root root 10<br>\
+290 <b>/dev/mpath</b> <br>\
+291 <b>/dev/dm-*</b> <br>\
+292 <b>/dev/md*</b> <br>\
+293 <b>/dev/sd*</b> <br>\
+294 <b>/proc/partitions</b> <br>\
+295 <b>/proc/partitions</b> major minor  #blocks  name<br>\
+296 <b>/proc/partitions</b> <br>\
+297 <b>/proc/partitions</b>    7        0      61148 loop0<br>\
+298 <b>/proc/partitions</b>    7        1      36056 loop1<br>\
+299 <b>/proc/partitions</b>    7        2      65492 loop2<br>\
+300 <b>/proc/partitions</b>    7        3      65492 loop3<br>\
+301 <b>/proc/partitions</b>    7        4      16384 loop4<br>\
+302 <b>/proc/partitions</b>  179        0   62160896 mmcblk3<br>\
+303 <b>/proc/partitions</b>  179        1   60635852 mmcblk3p1<br>\
+304 <b>/proc/partitions</b>  179        2     131072 mmcblk3p2<br>\
+305 <b>/proc/partitions</b>  179        3        768 mmcblk3p3<br>\
+306 <b>/proc/partitions</b>  179        4      32384 mmcblk3p4<br>\
+307 <b>/proc/partitions</b>  179        5     131072 mmcblk3p5<br>\
+308 <b>/proc/partitions</b>  179        6        768 mmcblk3p6<br>\
+309 <b>/proc/partitions</b>  179        7      32384 mmcblk3p7<br>\
+310 <b>/proc/partitions</b>  179        8      81920 mmcblk3p8<br>\
+311 <b>/proc/partitions</b>  179        9        512 mmcblk3p9<br>\
+312 <b>/proc/partitions</b>  179       10      65536 mmcblk3p10<br>\
+313 <b>/proc/partitions</b>  179       11      81920 mmcblk3p11<br>\
+314 <b>/proc/partitions</b>  179       12        512 mmcblk3p12<br>\
+315 <b>/proc/partitions</b>  179       13      65536 mmcblk3p13<br>\
+316 <b>/proc/partitions</b>  179       14     409600 mmcblk3p14<br>\
+317 <b>/proc/partitions</b>  179       15     491008 mmcblk3p15<br>\
+318 <b>/proc/partitions</b>  252        0    1964648 zram0<br>\
+319 <b>/proc/partitions</b>  252        1    1964648 zram1<br>\
+320 <b>/proc/partitions</b>  252        2    1964648 zram2<br>\
+321 <b>/proc/partitions</b>  252        3    1964648 zram3<br>\
+322 <b>/proc/partitions</b>  252        4    1964648 zram4<br>\
+323 <b>/proc/partitions</b>  252        5    1964648 zram5<br>\
+324 <b>/proc/partitions</b>  252        6    1964648 zram6<br>\
+325 <b>/proc/partitions</b>  252        7    1964648 zram7<br>\
+326 <b>/proc/1/stat</b> <br>\
+327 <b>/proc/1/stat</b> 1 (systemd) S 0 1 1 0 -1 4194560 37140 1133695 171 1926 669 1710 4844 2370 20 0 1 0 0 171253760 2893 18446744073709551615 1 1 0 0 0 0 671173123 4096 1260 0 0 0 17 5 0 0 0 0 0 0 0 0 0 0 0 0 0<br>\
+328 <b>/proc/net/rpc/nfs</b> <br>\
+329 <b>/proc/net/rpc/nfs</b> net 0 0 0 0<br>\
+330 <b>/proc/net/rpc/nfs</b> rpc 0 0 0<br>\
+331 <b>/proc/net/rpc/nfs</b> proc2 18 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0<br>\
+332 <b>/proc/net/rpc/nfs</b> proc3 22 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0<br>\
+333 <b>/proc/net/rpc/nfs</b> proc4 69 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0<br>\
+334 <b>/proc/net/rpc/nfsd</b> <br>\
+335 <b>/proc/modules</b> <br>\
+336 <b>/proc/modules</b> xt_conntrack 16384 1 - Live 0x0000000000000000<br>\
+337 <b>/proc/modules</b> xt_MASQUERADE 16384 1 - Live 0x0000000000000000<br>\
+338 <b>/proc/modules</b> nf_conntrack_netlink 45056 0 - Live 0x0000000000000000<br>\
+339 <b>/proc/modules</b> nfnetlink 20480 2 nf_conntrack_netlink<br>\
+340 <b>/proc/modules</b> iptable_nat 16384 1 - Live 0x0000000000000000<br>\
+341 <b>/proc/modules</b> nf_nat 45056 2 xt_MASQUERADE<br>\
+342 <b>/proc/modules</b> nf_conntrack 122880 4 xt_conntrack<br>\
+343 <b>/proc/modules</b> nf_defrag_ipv6 24576 1 nf_conntrack<br>\
+344 <b>/proc/modules</b> nf_defrag_ipv4 16384 1 nf_conntrack<br>\
+345 <b>/proc/modules</b> libcrc32c 16384 2 nf_nat<br>\
+346 <b>/proc/modules</b> xt_addrtype 16384 2 - Live 0x0000000000000000<br>\
+347 <b>/proc/modules</b> iptable_filter 16384 1 - Live 0x0000000000000000<br>\
+348 <b>/proc/modules</b> br_netfilter 32768 0 - Live 0x0000000000000000<br>\
+349 <b>/proc/modules</b> nvidia_modeset 1253376 4 - Live 0x0000000000000000 (O)<br>\
+350 <b>/proc/modules</b> bridge 241664 1 br_netfilter<br>\
+351 <b>/proc/modules</b> stp 20480 1 bridge<br>\
+352 <b>/proc/modules</b> llc 20480 2 bridge<br>\
+353 <b>/proc/modules</b> usb_f_ncm 28672 2 - Live 0x0000000000000000<br>\
+354 <b>/proc/modules</b> usb_f_mass_storage 45056 2 - Live 0x0000000000000000<br>\
+355 <b>/proc/modules</b> rtk_btusb 73728 0 - Live 0x0000000000000000 (O)<br>\
+356 <b>/proc/modules</b> btusb 49152 0 - Live 0x0000000000000000<br>\
+357 <b>/proc/modules</b> btrtl 24576 1 btusb<br>\
+358 <b>/proc/modules</b> btintel 40960 1 btusb<br>\
+359 <b>/proc/modules</b> btbcm 28672 1 btusb<br>\
+360 <b>/proc/modules</b> bluetooth 434176 22 rtk_btusb<br>\
+361 <b>/proc/modules</b> ecdh_generic 16384 1 bluetooth<br>\
+362 <b>/proc/modules</b> ecc 32768 1 ecdh_generic<br>\
+363 <b>/proc/modules</b> lzo_rle 16384 64 - Live 0x0000000000000000<br>\
+364 <b>/proc/modules</b> lzo_compress 16384 1 lzo_rle<br>\
+365 <b>/proc/modules</b> zram 32768 16 - Live 0x0000000000000000<br>\
+366 <b>/proc/modules</b> zsmalloc 32768 1 zram<br>\
+367 <b>/proc/modules</b> usb_f_acm 16384 2 - Live 0x0000000000000000<br>\
+368 <b>/proc/modules</b> u_serial 20480 3 usb_f_acm<br>\
+369 <b>/proc/modules</b> usb_f_rndis 28672 2 - Live 0x0000000000000000<br>\
+370 <b>/proc/modules</b> u_ether 28672 2 usb_f_ncm<br>\
+371 <b>/proc/modules</b> snd_soc_tegra210_admaif_oot 118784 1 - Live 0x0000000000000000 (O)<br>\
+372 <b>/proc/modules</b> snd_soc_tegra186_asrc_oot 36864 1 - Live 0x0000000000000000 (O)<br>\
+373 <b>/proc/modules</b> snd_soc_tegra186_arad_oot 24576 2 snd_soc_tegra186_asrc_oot<br>\
+374 <b>/proc/modules</b> snd_soc_tegra210_mixer_oot 45056 1 - Live 0x0000000000000000 (O)<br>\
+375 <b>/proc/modules</b> snd_soc_tegra_pcm 16384 1 snd_soc_tegra210_admaif_oot<br>\
+376 <b>/proc/modules</b> snd_soc_tegra210_ope_oot 32768 1 - Live 0x0000000000000000 (O)<br>\
+377 <b>/proc/modules</b> snd_soc_tegra210_mvc_oot 20480 2 - Live 0x0000000000000000 (O)<br>\
+378 <b>/proc/modules</b> snd_soc_tegra210_afc_oot 20480 6 - Live 0x0000000000000000 (O)<br>\
+379 <b>/proc/modules</b> snd_soc_tegra186_dspk_oot 20480 2 - Live 0x0000000000000000 (O)<br>\
+380 <b>/proc/modules</b> snd_soc_tegra210_dmic_oot 20480 4 - Live 0x0000000000000000 (O)<br>\
+381 <b>/proc/modules</b> snd_soc_tegra210_adx_oot 28672 4 - Live 0x0000000000000000 (O)<br>\
+382 <b>/proc/modules</b> snd_soc_tegra210_amx_oot 32768 4 - Live 0x0000000000000000 (O)<br>\
+383 <b>/proc/modules</b> snd_soc_tegra210_sfc_oot 57344 4 - Live 0x0000000000000000 (O)<br>\
+384 <b>/proc/modules</b> snd_soc_tegra210_i2s_oot 24576 6 - Live 0x0000000000000000 (O)<br>\
+385 <b>/proc/modules</b> snd_soc_tegra210_ahub_oot 1257472 3 snd_soc_tegra210_ope_oot<br>\
+386 <b>/proc/modules</b> tegra210_adma 24576 1 - Live 0x0000000000000000<br>\
+387 <b>/proc/modules</b> nvvrs_pseq_rtc 16384 0 - Live 0x0000000000000000 (O)<br>\
+388 <b>/proc/modules</b> snd_soc_tegra_machine_driver_oot 16384 0 - Live 0x0000000000000000 (O)<br>\
+389 <b>/proc/modules</b> snd_soc_tegra_utils_oot 28672 2 snd_soc_tegra210_admaif_oot<br>\
+390 <b>/proc/modules</b> crct10dif_ce 20480 1 - Live 0x0000000000000000<br>\
+391 <b>/proc/modules</b> tegra234_oc_event 16384 0 - Live 0x0000000000000000 (O)<br>\
+392 <b>/proc/modules</b> snd_soc_simple_card_utils 28672 1 snd_soc_tegra_utils_oot<br>\
+393 <b>/proc/modules</b> tegra23x_perf_uncore 20480 0 - Live 0x0000000000000000 (O)<br>\
+394 <b>/proc/modules</b> nvpmodel_clk_cap 16384 0 - Live 0x0000000000000000 (O)<br>\
+395 <b>/proc/modules</b> nvethernet 1150976 0 - Live 0x0000000000000000 (O)<br>\
+396 <b>/proc/modules</b> mttcan 65536 0 - Live 0x0000000000000000 (O)<br>\
+397 <b>/proc/modules</b> snd_hda_codec_hdmi 61440 1 - Live 0x0000000000000000<br>\
+398 <b>/proc/modules</b> rtl8822ce 3022848 0 - Live 0x0000000000000000 (O)<br>\
+399 <b>/proc/modules</b> can_dev 36864 1 mttcan<br>\
+400 <b>/proc/modules</b> tegra_cactmon_mc_all 16384 0 - Live 0x0000000000000000 (O)<br>\
+401 <b>/proc/modules</b> nvpps 28672 2 nvethernet<br>\
+402 <b>/proc/modules</b> tegra194_gte 28672 1 nvpps<br>\
+403 <b>/proc/modules</b> tegra_mce 24576 1 tegra23x_perf_uncore<br>\
+404 <b>/proc/modules</b> snd_soc_rt5640 114688 1 - Live 0x0000000000000000<br>\
+405 <b>/proc/modules</b> thermal_trip_event 16384 0 - Live 0x0000000000000000 (O)<br>\
+406 <b>/proc/modules</b> tegra_aconnect 16384 0 - Live 0x0000000000000000<br>\
+407 <b>/proc/modules</b> snd_hda_tegra 20480 0 - Live 0x0000000000000000<br>\
+408 <b>/proc/modules</b> snd_soc_rl6231 16384 1 snd_soc_rt5640<br>\
+409 <b>/proc/modules</b> snd_hda_codec 126976 2 snd_hda_codec_hdmi<br>\
+410 <b>/proc/modules</b> at24 24576 0 - Live 0x0000000000000000<br>\
+411 <b>/proc/modules</b> snd_hda_core 94208 3 snd_hda_codec_hdmi<br>\
+412 <b>/proc/modules</b> pwm_tegra_tachometer 16384 0 - Live 0x0000000000000000 (O)<br>\
+413 <b>/proc/modules</b> cfg80211 729088 1 rtl8822ce<br>\
+414 <b>/proc/modules</b> rfkill 36864 8 bluetooth<br>\
+415 <b>/proc/modules</b> pwm_tegra 20480 1 - Live 0x0000000000000000<br>\
+416 <b>/proc/modules</b> nvidia 1454080 9 nvidia_modeset<br>\
+417 <b>/proc/modules</b> host1x_fence 24576 0 - Live 0x0000000000000000 (O)<br>\
+418 <b>/proc/modules</b> mc_hwpm 16384 0 - Live 0x0000000000000000 (O)<br>\
+419 <b>/proc/modules</b> i2c_nvvrs11 16384 0 - Live 0x0000000000000000 (O)<br>\
+420 <b>/proc/modules</b> nvidia_vrs_pseq 16384 0 - Live 0x0000000000000000 (O)<br>\
+421 <b>/proc/modules</b> lm90 28672 0 - Live 0x0000000000000000<br>\
+422 <b>/proc/modules</b> tegra_dce 98304 2 nvidia<br>\
+423 <b>/proc/modules</b> tegra_bpmp_thermal 16384 0 - Live 0x0000000000000000<br>\
+424 <b>/proc/modules</b> nvhost_vi5 20480 0 - Live 0x0000000000000000 (O)<br>\
+425 <b>/proc/modules</b> nvhost_isp5 16384 0 - Live 0x0000000000000000 (O)<br>\
+426 <b>/proc/modules</b> nvhost_nvcsi_t194 16384 0 - Live 0x0000000000000000 (O)<br>\
+427 <b>/proc/modules</b> libcomposite 61440 16 usb_f_ncm<br>\
+428 <b>/proc/modules</b> tegra_camera 217088 3 nvhost_isp5<br>\
+429 <b>/proc/modules</b> v4l2_dv_timings 36864 1 tegra_camera<br>\
+430 <b>/proc/modules</b> nvhost_nvcsi 24576 1 tegra_camera<br>\
+431 <b>/proc/modules</b> tegra_camera_platform 24576 4 nvhost_vi5<br>\
+432 <b>/proc/modules</b> capture_ivc 28672 1 tegra_camera<br>\
+433 <b>/proc/modules</b> tegra_camera_rtcpu 176128 2 tegra_camera<br>\
+434 <b>/proc/modules</b> ivc_bus 24576 2 capture_ivc<br>\
+435 <b>/proc/modules</b> hsp_mailbox_client 20480 2 tegra_camera_rtcpu<br>\
+436 <b>/proc/modules</b> governor_userspace 16384 0 - Live 0x0000000000000000<br>\
+437 <b>/proc/modules</b> ivc_ext 20480 2 capture_ivc<br>\
+438 <b>/proc/modules</b> v4l2_fwnode 20480 1 tegra_camera<br>\
+439 <b>/proc/modules</b> v4l2_async 20480 2 tegra_camera<br>\
+440 <b>/proc/modules</b> videobuf2_dma_contig 24576 1 tegra_camera<br>\
+441 <b>/proc/modules</b> videobuf2_memops 20480 1 videobuf2_dma_contig<br>\
+442 <b>/proc/modules</b> tegra_drm_next 344064 12 - Live 0x0000000000000000 (O)<br>\
+443 <b>/proc/modules</b> videobuf2_v4l2 28672 1 tegra_camera<br>\
+444 <b>/proc/modules</b> nvhost_pva 155648 0 - Live 0x0000000000000000 (O)<br>\
+445 <b>/proc/modules</b> nvhost_nvdla 98304 0 - Live 0x0000000000000000 (O)<br>\
+446 <b>/proc/modules</b> tegra_wmark 16384 0 - Live 0x0000000000000000 (O)<br>\
+447 <b>/proc/modules</b> videobuf2_common 61440 4 tegra_camera<br>\
+448 <b>/proc/modules</b> nvhwpm 106496 4 mc_hwpm<br>\
+449 <b>/proc/modules</b> videodev 249856 4 tegra_camera<br>\
+450 <b>/proc/modules</b> nvhost_capture 24576 2 nvhost_vi5<br>\
+451 <b>/proc/modules</b> mc 57344 4 tegra_camera<br>\
+452 <b>/proc/modules</b> cec 53248 1 tegra_drm_next<br>\
+453 <b>/proc/modules</b> tegra_se 53248 0 - Live 0x0000000000000000 (O)<br>\
+454 <b>/proc/modules</b> host1x_nvhost 40960 10 nvidia_modeset<br>\
+455 <b>/proc/modules</b> tsecriscv 28672 1 nvidia<br>\
+456 <b>/proc/modules</b> drm_kms_helper 278528 1 tegra_drm_next<br>\
+457 <b>/proc/modules</b> crypto_engine 16384 1 tegra_se<br>\
+458 <b>/proc/modules</b> ina3221 24576 0 - Live 0x0000000000000000<br>\
+459 <b>/proc/modules</b> pwm_fan 24576 0 - Live 0x0000000000000000<br>\
+460 <b>/proc/modules</b> nvgpu 2654208 52 - Live 0x0000000000000000 (O)<br>\
+461 <b>/proc/modules</b> governor_pod_scaling 36864 0 - Live 0x0000000000000000 (O)<br>\
+462 <b>/proc/modules</b> mc_utils 16384 3 nvidia<br>\
+463 <b>/proc/modules</b> host1x_next 180224 8 nvidia_modeset<br>\
+464 <b>/proc/modules</b> nvmap 204800 267 nvgpu<br>\
+465 <b>/proc/modules</b> nvsciipc 24576 1 nvmap<br>\
+466 <b>/proc/modules</b> fuse 126976 5 - Live 0x0000000000000000<br>\
+467 <b>/proc/modules</b> drm 602112 16 nvidia<br>\
+468 <b>/proc/modules</b> ip_tables 32768 2 iptable_nat<br>\
+469 <b>/proc/modules</b> x_tables 45056 6 xt_conntrack<br>\
+470 <b>/proc/modules</b> ipv6 471040 144 br_netfilter<br>\
+471 <b>/proc/modules</b> tegra_xudc 45056 0 - Live 0x0000000000000000<br>\
+472 <b>/proc/modules</b> ucsi_ccg 28672 0 - Live 0x0000000000000000<br>\
+473 <b>/proc/modules</b> typec_ucsi 32768 1 ucsi_ccg<br>\
+474 <b>/proc/modules</b> typec 53248 1 typec_ucsi<br>\
+475 <b>/proc/modules</b> nvme 45056 0 - Live 0x0000000000000000<br>\
+476 <b>/proc/modules</b> nvme_core 90112 1 nvme<br>\
+477 <b>/proc/modules</b> phy_tegra194_p2u 16384 13 - Live 0x0000000000000000<br>\
+478 <b>/proc/modules</b> pcie_tegra194 40960 0 - Live 0x0000000000000000<br>\
+479 <b>ifconfig</b> <br>\
+480 <b>ifconfig</b> docker0: flags=4099<UP<br>\
+481 <b>ifconfig</b>         inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255<br>\
+482 <b>ifconfig</b>         ether 02:42:06:73:d9:51  txqueuelen 0  (Ethernet)<br>\
+483 <b>ifconfig</b>         RX packets 0  bytes 0 (0.0 B)<br>\
+484 <b>ifconfig</b>         RX errors 0  dropped 0  overruns 0  frame 0<br>\
+485 <b>ifconfig</b>         TX packets 0  bytes 0 (0.0 B)<br>\
+486 <b>ifconfig</b>         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0<br>\
+487 <b>ifconfig</b> <br>\
+488 <b>ifconfig</b> eth0: flags=4099<UP<br>\
+489 <b>ifconfig</b>         ether 48:b0:2d:82:cf:e6  txqueuelen 1000  (Ethernet)<br>\
+490 <b>ifconfig</b>         RX packets 0  bytes 0 (0.0 B)<br>\
+491 <b>ifconfig</b>         RX errors 0  dropped 0  overruns 0  frame 0<br>\
+492 <b>ifconfig</b>         TX packets 0  bytes 0 (0.0 B)<br>\
+493 <b>ifconfig</b>         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0<br>\
+494 <b>ifconfig</b> <br>\
+495 <b>ifconfig</b> lo: flags=73<UP<br>\
+496 <b>ifconfig</b>         inet 127.0.0.1  netmask 255.0.0.0<br>\
+497 <b>ifconfig</b>         inet6 ::1  prefixlen 128  scopeid 0x10<host><br>\
+498 <b>ifconfig</b>         loop  txqueuelen 1000  (Local Loopback)<br>\
+499 <b>ifconfig</b>         RX packets 16727  bytes 1448601 (1.4 MB)<br>\
+500 <b>ifconfig</b>         RX errors 0  dropped 0  overruns 0  frame 0<br>\
+501 <b>ifconfig</b>         TX packets 16727  bytes 1448601 (1.4 MB)<br>\
+502 <b>ifconfig</b>         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0<br>\
+503 <b>ifconfig</b> <br>\
+504 <b>ifconfig</b> usb0: flags=4099<UP<br>\
+505 <b>ifconfig</b>         ether 2a:d9:fd:23:24:6d  txqueuelen 1000  (Ethernet)<br>\
+506 <b>ifconfig</b>         RX packets 0  bytes 0 (0.0 B)<br>\
+507 <b>ifconfig</b>         RX errors 0  dropped 0  overruns 0  frame 0<br>\
+508 <b>ifconfig</b>         TX packets 0  bytes 0 (0.0 B)<br>\
+509 <b>ifconfig</b>         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0<br>\
+510 <b>ifconfig</b> <br>\
+511 <b>ifconfig</b> usb1: flags=4099<UP<br>\
+512 <b>ifconfig</b>         ether 2a:d9:fd:23:24:6f  txqueuelen 1000  (Ethernet)<br>\
+513 <b>ifconfig</b>         RX packets 0  bytes 0 (0.0 B)<br>\
+514 <b>ifconfig</b>         RX errors 0  dropped 0  overruns 0  frame 0<br>\
+515 <b>ifconfig</b>         TX packets 0  bytes 0 (0.0 B)<br>\
+516 <b>ifconfig</b>         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0<br>\
+517 <b>ifconfig</b> <br>\
+518 <b>ifconfig</b> wlan0: flags=4163<UP<br>\
+519 <b>ifconfig</b>         inet 10.0.0.215  netmask 255.255.255.0  broadcast 10.0.0.255<br>\
+520 <b>ifconfig</b>         inet6 2601:c2:8300:1150:6427:2b13:7037:3cc2  prefixlen 64  scopeid 0x0<global><br>\
+521 <b>ifconfig</b>         inet6 fe80::1e1f:5ee3:445e:eac0  prefixlen 64  scopeid 0x20<link><br>\
+522 <b>ifconfig</b>         inet6 2601:c2:8300:1150::b2d3  prefixlen 128  scopeid 0x0<global><br>\
+523 <b>ifconfig</b>         inet6 2601:c2:8300:1150:ec8d:de7c:c7d0:7f56  prefixlen 64  scopeid 0x0<global><br>\
+524 <b>ifconfig</b>         ether ec:2e:98:ca:58:e1  txqueuelen 1000  (Ethernet)<br>\
+525 <b>ifconfig</b>         RX packets 1079246  bytes 6503523542 (6.5 GB)<br>\
+526 <b>ifconfig</b>         RX errors 0  dropped 101  overruns 0  frame 0<br>\
+527 <b>ifconfig</b>         TX packets 265615  bytes 191262781 (191.2 MB)<br>\
+528 <b>ifconfig</b>         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0<br>\
+529 <b>ifconfig</b> <br>\
+530 <b>/bin/df-m</b> <br>\
+531 <b>/bin/df-m</b> Filesystem     1M-blocks  Used Available Use% Mounted on<br>\
+532 <b>/bin/df-m</b> ddev/mmcblk3p1     55129 44401      7897  85% /<br>\
+533 <b>/bin/df-m</b> tmpfs              15349     1     15349   1% /dev/shm<br>\
+534 <b>/bin/df-m</b> tmpfs               6140    35      6106   1% /run<br>\
+535 <b>/bin/df-m</b> tmpfs                  5     1         5   1% /run/lock<br>\
+536 <b>/bin/df-m</b> tmpfs               3070     2      3069   1% /run/user/1000<br>\
+537 <b>/bin/mount</b> <br>\
+538 <b>/bin/mount</b> ddev/mmcblk3p1 on / type ext4 (rw<br>\
+539 <b>/bin/mount</b> proc on /proc type proc (rw<br>\
+540 <b>/bin/mount</b> sysfs on /sys type sysfs (rw<br>\
+541 <b>/bin/mount</b> none on /dev type devtmpfs (rw<br>\
+542 <b>/bin/mount</b> securityfs on /sys/kernel/security type securityfs (rw<br>\
+543 <b>/bin/mount</b> selinuxfs on /sys/fs/selinux type selinuxfs (rw<br>\
+544 <b>/bin/mount</b> tmpfs on /dev/shm type tmpfs (rw<br>\
+545 <b>/bin/mount</b> devpts on /dev/pts type devpts (rw<br>\
+546 <b>/bin/mount</b> tmpfs on /run type tmpfs (rw<br>\
+547 <b>/bin/mount</b> tmpfs on /run/lock type tmpfs (rw<br>\
+548 <b>/bin/mount</b> cgroup2 on /sys/fs/cgroup type cgroup2 (rw<br>\
+549 <b>/bin/mount</b> pstore on /sys/fs/pstore type pstore (rw<br>\
+550 <b>/bin/mount</b> efivarfs on /sys/firmware/efi/efivars type efivarfs (rw<br>\
+551 <b>/bin/mount</b> bpf on /sys/fs/bpf type bpf (rw<br>\
+552 <b>/bin/mount</b> systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw<br>\
+553 <b>/bin/mount</b> hugetlbfs on /dev/hugepages type hugetlbfs (rw<br>\
+554 <b>/bin/mount</b> mqueue on /dev/mqueue type mqueue (rw<br>\
+555 <b>/bin/mount</b> debugfs on /sys/kernel/debug type debugfs (rw<br>\
+556 <b>/bin/mount</b> tracefs on /sys/kernel/tracing type tracefs (rw<br>\
+557 <b>/bin/mount</b> fusectl on /sys/fs/fuse/connections type fusectl (rw<br>\
+558 <b>/bin/mount</b> configfs on /sys/kernel/config type configfs (rw<br>\
+559 <b>/bin/mount</b> none on /run/credentials/systemd-sysusers.service type ramfs (ro<br>\
+560 <b>/bin/mount</b> dvar/lib/snapd/snaps/snapd_20674.snap on /snap/snapd/20674 type squashfs (ro<br>\
+561 <b>/bin/mount</b> dvar/lib/snapd/snaps/core20_2107.snap on /snap/core20/2107 type squashfs (ro<br>\
+562 <b>/bin/mount</b> dvar/lib/snapd/snaps/sublime-text_138.snap on /snap/sublime-text/138 type squashfs (ro<br>\
+563 <b>/bin/mount</b> dvar/lib/snapd/snaps/sublime-text_157.snap on /snap/sublime-text/157 type squashfs (ro<br>\
+564 <b>/bin/mount</b> binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw<br>\
+565 <b>/bin/mount</b> tmpfs on /run/user/1000 type tmpfs (rw<br>\
+566 <b>/bin/mount</b> gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw<br>\
+567 <b>/bin/mount</b> portal on /run/user/1000/doc type fuse.portal (rw<br>\
+568 <b>/etc/fstab</b> <br>\
+569 <b>/etc/fstab</b> # /etc/fstab: static file system information.<br>\
+570 <b>/etc/fstab</b> #<br>\
+571 <b>/etc/fstab</b> # These are the filesystems that are always mounted on boot<br>\
+572 <b>/etc/fstab</b> # override any of these by copying the appropriate line from this file into<br>\
+573 <b>/etc/fstab</b> # /etc/fstab and tweaking it as you see fit.  See fstab(5).<br>\
+574 <b>/etc/fstab</b> #<br>\
+575 <b>/etc/fstab</b> # <file system> <mount point>             <type>          <options>                               <dump> <pass><br>\
+576 <b>/etc/fstab</b> ddev/root            /                     ext4           defaults                                     0 1<br>\
+577 <b>netstat -r</b> <br>\
+578 <b>netstat -r</b> Kernel IP routing table<br>\
+579 <b>netstat -r</b> Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface<br>\
+580 <b>netstat -r</b> default         _gateway        0.0.0.0         UG        0 0          0 wlan0<br>\
+581 <b>netstat -r</b> 10.0.0.0        0.0.0.0         255.255.255.0   U         0 0          0 wlan0<br>\
+582 <b>netstat -r</b> link-local      0.0.0.0         255.255.0.0     U         0 0          0 docker0<br>\
+583 <b>netstat -r</b> 172.17.0.0      0.0.0.0         255.255.0.0     U         0 0          0 docker0<br>\
+584 <b>uptime</b> <br>\
+585 <b>uptime</b>  06:39:09 up 19:17<br>\
+586 <b>getconf PAGESIZE</b> <br>\
+587 <b>getconf PAGESIZE</b> 4096<br>\
+");
+}
+</script>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script type="text/javascript">
+		google.load("visualization", "1.1", {packages:["corechart"]});
+
+		google.setOnLoadCallback(setupCharts);
+		
+		function setupCharts() {
+		
+		var chart = null;
+
+			var data_CPU_UTIL = google.visualization.arrayToDataTable([
+[{type: 'datetime', label: 'Datetime' },'User%','Sys%','Wait%','Idle%']
+,['Date(2024,  2, 13, 06, 39, 10)',3.3,2.8,0.0,93.9]
+,['Date(2024,  2, 13, 06, 39, 11)',36.2,2.7,0.0,61.0]
+,['Date(2024,  2, 13, 06, 39, 12)',49.9,0.3,0.0,49.9]
+,['Date(2024,  2, 13, 06, 39, 13)',49.3,1.2,0.0,49.4]
+,['Date(2024,  2, 13, 06, 39, 14)',49.1,1.2,0.0,49.6]
+,['Date(2024,  2, 13, 06, 39, 15)',49.0,1.5,0.0,49.5]
+,['Date(2024,  2, 13, 06, 39, 16)',49.6,0.9,0.0,49.6]
+,['Date(2024,  2, 13, 06, 39, 17)',49.7,1.2,0.0,49.1]
+,['Date(2024,  2, 13, 06, 39, 18)',48.8,1.6,0.0,49.6]
+,['Date(2024,  2, 13, 06, 39, 19)',48.9,1.5,0.1,49.4]
+,['Date(2024,  2, 13, 06, 39, 20)',48.8,1.4,0.0,49.8]
+,['Date(2024,  2, 13, 06, 39, 21)',48.9,1.4,0.0,49.7]
+,['Date(2024,  2, 13, 06, 39, 22)',48.9,1.1,0.0,50.0]
+,['Date(2024,  2, 13, 06, 39, 23)',49.1,1.5,0.0,49.4]
+,['Date(2024,  2, 13, 06, 39, 24)',49.1,1.2,0.0,49.6]
+,['Date(2024,  2, 13, 06, 39, 25)',48.3,2.2,0.0,49.5]
+,['Date(2024,  2, 13, 06, 39, 26)',48.8,1.4,0.0,49.8]
+,['Date(2024,  2, 13, 06, 39, 27)',49.3,1.1,0.0,49.6]
+,['Date(2024,  2, 13, 06, 39, 28)',49.1,1.4,0.0,49.5]
+,['Date(2024,  2, 13, 06, 39, 29)',49.2,0.8,0.1,49.9]
+,['Date(2024,  2, 13, 06, 39, 30)',48.9,1.5,0.0,49.6]
+,['Date(2024,  2, 13, 06, 39, 31)',48.9,1.3,0.0,49.9]
+,['Date(2024,  2, 13, 06, 39, 32)',49.4,1.5,0.0,49.1]
+,['Date(2024,  2, 13, 06, 39, 33)',49.2,0.9,0.0,49.9]
+,['Date(2024,  2, 13, 06, 39, 34)',49.2,1.4,0.0,49.4]
+,['Date(2024,  2, 13, 06, 39, 35)',49.2,1.2,0.0,49.6]
+,['Date(2024,  2, 13, 06, 39, 36)',49.2,1.2,0.0,49.5]
+,['Date(2024,  2, 13, 06, 39, 37)',49.0,1.3,0.0,49.7]
+,['Date(2024,  2, 13, 06, 39, 38)',47.1,2.0,0.0,50.9]
+,['Date(2024,  2, 13, 06, 39, 39)',1.0,1.0,0.0,98.0]
+,['Date(2024,  2, 13, 06, 39, 40)',0.2,0.7,0.1,98.9]
+,['Date(2024,  2, 13, 06, 39, 41)',0.0,0.4,0.0,99.6]
+,['Date(2024,  2, 13, 06, 39, 42)',0.4,0.5,0.0,99.1]
+,['Date(2024,  2, 13, 06, 39, 43)',0.4,0.9,0.0,98.7]
+,['Date(2024,  2, 13, 06, 39, 44)',0.3,0.6,0.0,99.1]
+,['Date(2024,  2, 13, 06, 39, 45)',0.6,1.4,0.1,97.9]
+,['Date(2024,  2, 13, 06, 39, 46)',1.3,0.8,0.0,98.0]
+,['Date(2024,  2, 13, 06, 39, 47)',5.6,2.6,0.0,91.7]
+,['Date(2024,  2, 13, 06, 39, 48)',2.5,2.1,0.0,95.4]
+,['Date(2024,  2, 13, 06, 39, 49)',0.1,0.8,0.0,99.1]
+,['Date(2024,  2, 13, 06, 39, 50)',1.1,2.0,0.1,96.7]
+,['Date(2024,  2, 13, 06, 39, 51)',2.3,1.5,0.0,96.2]
+,['Date(2024,  2, 13, 06, 39, 52)',0.4,0.5,0.0,99.1]
+,['Date(2024,  2, 13, 06, 39, 53)',0.0,1.0,0.0,99.0]
+,['Date(2024,  2, 13, 06, 39, 54)',0.1,0.5,0.0,99.4]
+,['Date(2024,  2, 13, 06, 39, 55)',1.0,1.3,0.1,97.6]
+,['Date(2024,  2, 13, 06, 39, 56)',1.4,1.5,0.0,97.1]
+,['Date(2024,  2, 13, 06, 39, 57)',0.3,0.6,0.0,99.1]
+,['Date(2024,  2, 13, 06, 39, 58)',2.0,1.6,0.0,96.4]
+,['Date(2024,  2, 13, 06, 39, 59)',1.4,2.0,0.0,96.6]
+		]);
+
+		var options_CPU_UTIL = {
+			chartArea: {left: "5%", width: "85%", top: "10%", height: "80%"},
+			title: "CPU Utilisation Percentages",
+			focusTarget: "category",
+			hAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 30
+				}
+			},
+			vAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 11
+				}
+			},
+			explorer: { actions: ["dragToZoom", "rightClickToReset"],
+				axis: "horizontal",
+				keepInBounds: true,
+				maxZoomIn: 20.0
+			},
+			isStacked:  1
+		};
+
+		document.getElementById("draw_CPU_UTIL").addEventListener("click", function() {
+		if (chart && chart.clearChart) chart.clearChart();
+
+		chart = new google.visualization.AreaChart(document.getElementById("chart_master"));
+		chart.draw( data_CPU_UTIL, options_CPU_UTIL);
+		});
+
+			var data_MEM_LINUX = google.visualization.arrayToDataTable([
+[{type: 'datetime', label: 'Datetime' },'memtotal','memfree','cached','active','buffers','inactive']
+,['Date(2024,  2, 13, 06, 39, 10)',30697.6,18693.1,8425.9,4825.6,243.3,5010.0]
+,['Date(2024,  2, 13, 06, 39, 11)',30697.6,18442.3,8425.7,4825.6,243.3,5249.9]
+,['Date(2024,  2, 13, 06, 39, 12)',30697.6,18444.3,8425.8,4825.6,243.3,5251.9]
+,['Date(2024,  2, 13, 06, 39, 13)',30697.6,18445.8,8425.8,4825.6,243.3,5252.0]
+,['Date(2024,  2, 13, 06, 39, 14)',30697.6,18447.3,8425.8,4825.6,243.3,5252.0]
+,['Date(2024,  2, 13, 06, 39, 15)',30697.6,18447.1,8425.8,4825.6,243.3,5252.0]
+,['Date(2024,  2, 13, 06, 39, 16)',30697.6,18446.8,8425.8,4825.6,243.3,5252.0]
+,['Date(2024,  2, 13, 06, 39, 17)',30697.6,18446.6,8425.8,4825.6,243.3,5252.0]
+,['Date(2024,  2, 13, 06, 39, 18)',30697.6,18446.6,8425.8,4825.6,243.3,5252.0]
+,['Date(2024,  2, 13, 06, 39, 19)',30697.6,18446.6,8425.8,4825.6,243.3,5252.0]
+,['Date(2024,  2, 13, 06, 39, 20)',30697.6,18446.3,8425.8,4825.6,243.3,5252.0]
+,['Date(2024,  2, 13, 06, 39, 21)',30697.6,18446.1,8425.8,4825.6,243.3,5252.0]
+,['Date(2024,  2, 13, 06, 39, 22)',30697.6,18445.8,8425.8,4825.6,243.3,5252.0]
+,['Date(2024,  2, 13, 06, 39, 23)',30697.6,18446.3,8425.8,4825.6,243.3,5252.0]
+,['Date(2024,  2, 13, 06, 39, 24)',30697.6,18446.1,8425.9,4825.6,243.3,5252.0]
+,['Date(2024,  2, 13, 06, 39, 25)',30697.6,18445.6,8425.9,4825.6,243.3,5252.0]
+,['Date(2024,  2, 13, 06, 39, 26)',30697.6,18445.6,8425.9,4825.6,243.3,5252.0]
+,['Date(2024,  2, 13, 06, 39, 27)',30697.6,18445.6,8425.9,4825.6,243.3,5252.1]
+,['Date(2024,  2, 13, 06, 39, 28)',30697.6,18445.1,8425.9,4825.6,243.3,5252.1]
+,['Date(2024,  2, 13, 06, 39, 29)',30697.6,18445.3,8425.9,4825.6,243.3,5252.1]
+,['Date(2024,  2, 13, 06, 39, 30)',30697.6,18444.8,8425.9,4825.6,243.3,5252.1]
+,['Date(2024,  2, 13, 06, 39, 31)',30697.6,18445.3,8425.9,4825.6,243.3,5252.1]
+,['Date(2024,  2, 13, 06, 39, 32)',30697.6,18445.1,8425.9,4825.6,243.3,5252.1]
+,['Date(2024,  2, 13, 06, 39, 33)',30697.6,18444.6,8425.9,4825.6,243.3,5252.1]
+,['Date(2024,  2, 13, 06, 39, 34)',30697.6,18444.6,8425.9,4825.6,243.3,5252.1]
+,['Date(2024,  2, 13, 06, 39, 35)',30697.6,18444.1,8425.9,4825.6,243.3,5252.1]
+,['Date(2024,  2, 13, 06, 39, 36)',30697.6,18444.3,8426.0,4825.6,243.3,5252.1]
+,['Date(2024,  2, 13, 06, 39, 37)',30697.6,18444.3,8426.0,4825.6,243.3,5252.1]
+,['Date(2024,  2, 13, 06, 39, 38)',30697.6,18622.8,8426.0,4825.6,243.3,5066.1]
+,['Date(2024,  2, 13, 06, 39, 39)',30697.6,18695.5,8426.0,4825.6,243.3,4999.6]
+,['Date(2024,  2, 13, 06, 39, 40)',30697.6,18695.5,8426.0,4825.6,243.3,4999.6]
+,['Date(2024,  2, 13, 06, 39, 41)',30697.6,18695.5,8426.0,4825.6,243.3,4999.6]
+,['Date(2024,  2, 13, 06, 39, 42)',30697.6,18695.5,8426.0,4825.6,243.3,4999.6]
+,['Date(2024,  2, 13, 06, 39, 43)',30697.6,18695.2,8426.0,4825.6,243.3,4999.6]
+,['Date(2024,  2, 13, 06, 39, 44)',30697.6,18695.3,8426.0,4825.6,243.3,4999.6]
+,['Date(2024,  2, 13, 06, 39, 45)',30697.6,18695.3,8426.0,4825.6,243.3,4999.6]
+,['Date(2024,  2, 13, 06, 39, 46)',30697.6,18695.3,8426.0,4825.6,243.3,4999.6]
+,['Date(2024,  2, 13, 06, 39, 47)',30697.6,18695.5,8426.0,4825.6,243.3,4999.6]
+,['Date(2024,  2, 13, 06, 39, 48)',30697.6,18695.5,8426.0,4825.6,243.3,4999.6]
+,['Date(2024,  2, 13, 06, 39, 49)',30697.6,18695.5,8426.0,4825.6,243.3,4999.6]
+,['Date(2024,  2, 13, 06, 39, 50)',30697.6,18695.1,8426.0,4825.6,243.3,4999.6]
+,['Date(2024,  2, 13, 06, 39, 51)',30697.6,18695.3,8426.0,4825.6,243.3,4999.7]
+,['Date(2024,  2, 13, 06, 39, 52)',30697.6,18695.3,8426.0,4825.6,243.3,4999.7]
+,['Date(2024,  2, 13, 06, 39, 53)',30697.6,18695.3,8426.0,4825.6,243.3,4999.7]
+,['Date(2024,  2, 13, 06, 39, 54)',30697.6,18695.3,8426.0,4825.6,243.3,4999.7]
+,['Date(2024,  2, 13, 06, 39, 55)',30697.6,18695.3,8426.0,4825.6,243.3,4999.7]
+,['Date(2024,  2, 13, 06, 39, 56)',30697.6,18695.3,8426.0,4825.6,243.3,4999.7]
+,['Date(2024,  2, 13, 06, 39, 57)',30697.6,18695.3,8426.0,4825.6,243.3,4999.7]
+,['Date(2024,  2, 13, 06, 39, 58)',30697.6,18695.3,8426.0,4825.6,243.3,4999.7]
+,['Date(2024,  2, 13, 06, 39, 59)',30697.6,18695.1,8426.0,4825.6,243.3,4999.7]
+		]);
+
+		var options_MEM_LINUX = {
+			chartArea: {left: "5%", width: "85%", top: "10%", height: "80%"},
+			title: "Real Memory - RAM in MB",
+			focusTarget: "category",
+			hAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 30
+				}
+			},
+			vAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 11
+				}
+			},
+			explorer: { actions: ["dragToZoom", "rightClickToReset"],
+				axis: "horizontal",
+				keepInBounds: true,
+				maxZoomIn: 20.0
+			},
+			isStacked:  0
+		};
+
+		document.getElementById("draw_MEM_LINUX").addEventListener("click", function() {
+		if (chart && chart.clearChart) chart.clearChart();
+
+		chart = new google.visualization.AreaChart(document.getElementById("chart_master"));
+		chart.draw( data_MEM_LINUX, options_MEM_LINUX);
+		});
+
+			var data_SWAP_LINUX = google.visualization.arrayToDataTable([
+[{type: 'datetime', label: 'Datetime' },'swaptotal','swapfree']
+,['Date(2024,  2, 13, 06, 39, 10)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 11)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 12)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 13)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 14)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 15)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 16)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 17)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 18)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 19)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 20)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 21)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 22)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 23)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 24)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 25)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 26)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 27)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 28)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 29)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 30)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 31)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 32)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 33)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 34)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 35)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 36)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 37)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 38)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 39)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 40)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 41)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 42)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 43)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 44)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 45)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 46)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 47)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 48)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 49)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 50)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 51)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 52)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 53)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 54)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 55)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 56)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 57)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 58)',15348.8,15348.8]
+,['Date(2024,  2, 13, 06, 39, 59)',15348.8,15348.8]
+		]);
+
+		var options_SWAP_LINUX = {
+			chartArea: {left: "5%", width: "85%", top: "10%", height: "80%"},
+			title: "Virtual Memory - Paging Space in MB",
+			focusTarget: "category",
+			hAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 30
+				}
+			},
+			vAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 11
+				}
+			},
+			explorer: { actions: ["dragToZoom", "rightClickToReset"],
+				axis: "horizontal",
+				keepInBounds: true,
+				maxZoomIn: 20.0
+			},
+			isStacked:  0
+		};
+
+		document.getElementById("draw_SWAP_LINUX").addEventListener("click", function() {
+		if (chart && chart.clearChart) chart.clearChart();
+
+		chart = new google.visualization.AreaChart(document.getElementById("chart_master"));
+		chart.draw( data_SWAP_LINUX, options_SWAP_LINUX);
+		});
+
+			var data_RUNQBLOCK = google.visualization.arrayToDataTable([
+[{type: 'datetime', label: 'Datetime' },'Runnable','Blocked']
+,['Date(2024,  2, 13, 06, 39, 10)',2,0]
+,['Date(2024,  2, 13, 06, 39, 11)',5,0]
+,['Date(2024,  2, 13, 06, 39, 12)',5,0]
+,['Date(2024,  2, 13, 06, 39, 13)',5,0]
+,['Date(2024,  2, 13, 06, 39, 14)',5,0]
+,['Date(2024,  2, 13, 06, 39, 15)',6,0]
+,['Date(2024,  2, 13, 06, 39, 16)',5,0]
+,['Date(2024,  2, 13, 06, 39, 17)',5,0]
+,['Date(2024,  2, 13, 06, 39, 18)',6,0]
+,['Date(2024,  2, 13, 06, 39, 19)',5,0]
+,['Date(2024,  2, 13, 06, 39, 20)',5,0]
+,['Date(2024,  2, 13, 06, 39, 21)',5,0]
+,['Date(2024,  2, 13, 06, 39, 22)',5,0]
+,['Date(2024,  2, 13, 06, 39, 23)',5,0]
+,['Date(2024,  2, 13, 06, 39, 24)',5,0]
+,['Date(2024,  2, 13, 06, 39, 25)',5,0]
+,['Date(2024,  2, 13, 06, 39, 26)',5,0]
+,['Date(2024,  2, 13, 06, 39, 27)',6,0]
+,['Date(2024,  2, 13, 06, 39, 28)',5,0]
+,['Date(2024,  2, 13, 06, 39, 29)',5,0]
+,['Date(2024,  2, 13, 06, 39, 30)',5,0]
+,['Date(2024,  2, 13, 06, 39, 31)',5,0]
+,['Date(2024,  2, 13, 06, 39, 32)',5,0]
+,['Date(2024,  2, 13, 06, 39, 33)',6,0]
+,['Date(2024,  2, 13, 06, 39, 34)',5,0]
+,['Date(2024,  2, 13, 06, 39, 35)',5,0]
+,['Date(2024,  2, 13, 06, 39, 36)',5,0]
+,['Date(2024,  2, 13, 06, 39, 37)',5,0]
+,['Date(2024,  2, 13, 06, 39, 38)',2,0]
+,['Date(2024,  2, 13, 06, 39, 39)',1,0]
+,['Date(2024,  2, 13, 06, 39, 40)',1,0]
+,['Date(2024,  2, 13, 06, 39, 41)',1,0]
+,['Date(2024,  2, 13, 06, 39, 42)',1,0]
+,['Date(2024,  2, 13, 06, 39, 43)',1,0]
+,['Date(2024,  2, 13, 06, 39, 44)',1,0]
+,['Date(2024,  2, 13, 06, 39, 45)',2,0]
+,['Date(2024,  2, 13, 06, 39, 46)',1,0]
+,['Date(2024,  2, 13, 06, 39, 47)',3,0]
+,['Date(2024,  2, 13, 06, 39, 48)',1,0]
+,['Date(2024,  2, 13, 06, 39, 49)',1,0]
+,['Date(2024,  2, 13, 06, 39, 50)',1,0]
+,['Date(2024,  2, 13, 06, 39, 51)',1,0]
+,['Date(2024,  2, 13, 06, 39, 52)',1,0]
+,['Date(2024,  2, 13, 06, 39, 53)',1,0]
+,['Date(2024,  2, 13, 06, 39, 54)',1,0]
+,['Date(2024,  2, 13, 06, 39, 55)',1,0]
+,['Date(2024,  2, 13, 06, 39, 56)',1,0]
+,['Date(2024,  2, 13, 06, 39, 57)',1,0]
+,['Date(2024,  2, 13, 06, 39, 58)',1,0]
+,['Date(2024,  2, 13, 06, 39, 59)',1,0]
+		]);
+
+		var options_RUNQBLOCK = {
+			chartArea: {left: "5%", width: "85%", top: "10%", height: "80%"},
+			title: "Run Queue - processes that running or ready to run or Blocked",
+			focusTarget: "category",
+			hAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 30
+				}
+			},
+			vAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 11
+				}
+			},
+			explorer: { actions: ["dragToZoom", "rightClickToReset"],
+				axis: "horizontal",
+				keepInBounds: true,
+				maxZoomIn: 20.0
+			},
+			isStacked:  0
+		};
+
+		document.getElementById("draw_RUNQBLOCK").addEventListener("click", function() {
+		if (chart && chart.clearChart) chart.clearChart();
+
+		chart = new google.visualization.AreaChart(document.getElementById("chart_master"));
+		chart.draw( data_RUNQBLOCK, options_RUNQBLOCK);
+		});
+
+			var data_PSWITCH = google.visualization.arrayToDataTable([
+[{type: 'datetime', label: 'Datetime' },'pswitch']
+,['Date(2024,  2, 13, 06, 39, 10)',0.0]
+,['Date(2024,  2, 13, 06, 39, 11)',3344.6]
+,['Date(2024,  2, 13, 06, 39, 12)',887.3]
+,['Date(2024,  2, 13, 06, 39, 13)',4124.5]
+,['Date(2024,  2, 13, 06, 39, 14)',4189.3]
+,['Date(2024,  2, 13, 06, 39, 15)',4243.3]
+,['Date(2024,  2, 13, 06, 39, 16)',3873.3]
+,['Date(2024,  2, 13, 06, 39, 17)',4563.5]
+,['Date(2024,  2, 13, 06, 39, 18)',3995.0]
+,['Date(2024,  2, 13, 06, 39, 19)',4446.5]
+,['Date(2024,  2, 13, 06, 39, 20)',4335.0]
+,['Date(2024,  2, 13, 06, 39, 21)',4818.8]
+,['Date(2024,  2, 13, 06, 39, 22)',4070.6]
+,['Date(2024,  2, 13, 06, 39, 23)',4216.2]
+,['Date(2024,  2, 13, 06, 39, 24)',4469.3]
+,['Date(2024,  2, 13, 06, 39, 25)',4411.0]
+,['Date(2024,  2, 13, 06, 39, 26)',4326.5]
+,['Date(2024,  2, 13, 06, 39, 27)',4470.0]
+,['Date(2024,  2, 13, 06, 39, 28)',4439.5]
+,['Date(2024,  2, 13, 06, 39, 29)',4026.7]
+,['Date(2024,  2, 13, 06, 39, 30)',4511.7]
+,['Date(2024,  2, 13, 06, 39, 31)',4189.2]
+,['Date(2024,  2, 13, 06, 39, 32)',4451.7]
+,['Date(2024,  2, 13, 06, 39, 33)',4083.5]
+,['Date(2024,  2, 13, 06, 39, 34)',4403.8]
+,['Date(2024,  2, 13, 06, 39, 35)',4224.6]
+,['Date(2024,  2, 13, 06, 39, 36)',4499.4]
+,['Date(2024,  2, 13, 06, 39, 37)',4151.5]
+,['Date(2024,  2, 13, 06, 39, 38)',4878.5]
+,['Date(2024,  2, 13, 06, 39, 39)',1943.4]
+,['Date(2024,  2, 13, 06, 39, 40)',1508.9]
+,['Date(2024,  2, 13, 06, 39, 41)',1371.4]
+,['Date(2024,  2, 13, 06, 39, 42)',2582.8]
+,['Date(2024,  2, 13, 06, 39, 43)',3407.9]
+,['Date(2024,  2, 13, 06, 39, 44)',3525.5]
+,['Date(2024,  2, 13, 06, 39, 45)',3539.5]
+,['Date(2024,  2, 13, 06, 39, 46)',3387.7]
+,['Date(2024,  2, 13, 06, 39, 47)',7939.1]
+,['Date(2024,  2, 13, 06, 39, 48)',7772.5]
+,['Date(2024,  2, 13, 06, 39, 49)',2736.5]
+,['Date(2024,  2, 13, 06, 39, 50)',6602.7]
+,['Date(2024,  2, 13, 06, 39, 51)',5676.5]
+,['Date(2024,  2, 13, 06, 39, 52)',3316.9]
+,['Date(2024,  2, 13, 06, 39, 53)',1489.1]
+,['Date(2024,  2, 13, 06, 39, 54)',910.8]
+,['Date(2024,  2, 13, 06, 39, 55)',2739.0]
+,['Date(2024,  2, 13, 06, 39, 56)',5085.9]
+,['Date(2024,  2, 13, 06, 39, 57)',3226.5]
+,['Date(2024,  2, 13, 06, 39, 58)',4691.0]
+,['Date(2024,  2, 13, 06, 39, 59)',7132.9]
+		]);
+
+		var options_PSWITCH = {
+			chartArea: {left: "5%", width: "85%", top: "10%", height: "80%"},
+			title: "Process Switches per second - between processes",
+			focusTarget: "category",
+			hAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 30
+				}
+			},
+			vAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 11
+				}
+			},
+			explorer: { actions: ["dragToZoom", "rightClickToReset"],
+				axis: "horizontal",
+				keepInBounds: true,
+				maxZoomIn: 20.0
+			},
+			isStacked:  0
+		};
+
+		document.getElementById("draw_PSWITCH").addEventListener("click", function() {
+		if (chart && chart.clearChart) chart.clearChart();
+
+		chart = new google.visualization.AreaChart(document.getElementById("chart_master"));
+		chart.draw( data_PSWITCH, options_PSWITCH);
+		});
+
+			var data_FORKEXEC = google.visualization.arrayToDataTable([
+[{type: 'datetime', label: 'Datetime' },'fork','exec']
+,['Date(2024,  2, 13, 06, 39, 10)',0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 11)',6.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 12)',0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 13)',26.9,0.0]
+,['Date(2024,  2, 13, 06, 39, 14)',27.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 15)',26.9,0.0]
+,['Date(2024,  2, 13, 06, 39, 16)',23.9,0.0]
+,['Date(2024,  2, 13, 06, 39, 17)',26.9,0.0]
+,['Date(2024,  2, 13, 06, 39, 18)',27.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 19)',24.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 20)',27.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 21)',26.9,0.0]
+,['Date(2024,  2, 13, 06, 39, 22)',27.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 23)',23.9,0.0]
+,['Date(2024,  2, 13, 06, 39, 24)',26.9,0.0]
+,['Date(2024,  2, 13, 06, 39, 25)',24.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 26)',27.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 27)',27.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 28)',24.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 29)',27.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 30)',24.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 31)',26.9,0.0]
+,['Date(2024,  2, 13, 06, 39, 32)',24.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 33)',27.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 34)',23.9,0.0]
+,['Date(2024,  2, 13, 06, 39, 35)',26.9,0.0]
+,['Date(2024,  2, 13, 06, 39, 36)',24.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 37)',24.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 38)',24.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 39)',0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 40)',0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 41)',0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 42)',0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 43)',0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 44)',0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 45)',0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 46)',0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 47)',0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 48)',1.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 49)',1.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 50)',0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 51)',0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 52)',0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 53)',0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 54)',0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 55)',0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 56)',0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 57)',0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 58)',2.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 59)',0.0,0.0]
+		]);
+
+		var options_FORKEXEC = {
+			chartArea: {left: "5%", width: "85%", top: "10%", height: "80%"},
+			title: "Fork() and Exec() System Calls per second - creating processes",
+			focusTarget: "category",
+			hAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 30
+				}
+			},
+			vAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 11
+				}
+			},
+			explorer: { actions: ["dragToZoom", "rightClickToReset"],
+				axis: "horizontal",
+				keepInBounds: true,
+				maxZoomIn: 20.0
+			},
+			isStacked:  0
+		};
+
+		document.getElementById("draw_FORKEXEC").addEventListener("click", function() {
+		if (chart && chart.clearChart) chart.clearChart();
+
+		chart = new google.visualization.AreaChart(document.getElementById("chart_master"));
+		chart.draw( data_FORKEXEC, options_FORKEXEC);
+		});
+
+			var data_CPU_USE = google.visualization.arrayToDataTable([
+['CPU','User%','System%']
+,['CPU001',28.5,2.7]
+,['CPU002',19.1,0.7]
+,['CPU003',9.3,1.3]
+,['CPU004',56.3,1.6]
+,['CPU005',41.4,1.3]
+,['CPU006',18.2,1.2]
+,['CPU007',22.1,0.8]
+,['CPU008',26.8,0.8]
+		]);
+
+		var options_CPU_USE = {
+			chartArea: {left: "5%", width: "85%", top: "10%", height: "80%"},
+			title: "Average Use of Logical CPU Core Threads - POWER=SMT or x86=Hyperthreads (ignoring values below 5%)",
+			focusTarget: "category",
+			vAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 11
+				}
+			},
+			isStacked:  1
+		};
+
+		document.getElementById("draw_CPU_USE").addEventListener("click", function() {
+		if (chart && chart.clearChart) chart.clearChart();
+
+		chart = new google.visualization.ColumnChart(document.getElementById("chart_master"));
+		chart.draw( data_CPU_USE, options_CPU_USE);
+		});
+
+			var data_TOPDISK = google.visualization.arrayToDataTable([
+[{type: 'datetime', label: 'Datetime' },'loop0','loop1','loop2','loop3','loop4','mmcblk3','mmcblk3p1','zram0','zram1','zram2','zram3','zram4','zram5','zram6','zram7']
+,['Date(2024,  2, 13, 06, 39, 10)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 11)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 12)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 13)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 14)',0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 15)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 16)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 17)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 18)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 19)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 20)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 21)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 22)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 23)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 24)',0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 25)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 26)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 27)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 28)',0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 29)',0.0,0.0,0.0,0.0,0.0,1.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 30)',0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 31)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 32)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 33)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 34)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 35)',0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 36)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 37)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 38)',0.0,0.0,0.0,0.0,0.0,2.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 39)',0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 40)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 41)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 42)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 43)',0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 44)',0.0,0.0,0.0,0.0,0.0,1.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 45)',0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 46)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 47)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 48)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 49)',0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 50)',0.0,0.0,0.0,0.0,0.0,2.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 51)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 52)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 53)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 54)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 55)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 56)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 57)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 58)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 59)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+		]);
+
+		var options_TOPDISK = {
+			chartArea: {left: "5%", width: "85%", top: "10%", height: "80%"},
+			title: "Top 15 disks by sum(Busy%)",
+			focusTarget: "category",
+			hAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 30
+				}
+			},
+			vAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 11
+				}
+			},
+			explorer: { actions: ["dragToZoom", "rightClickToReset"],
+				axis: "horizontal",
+				keepInBounds: true,
+				maxZoomIn: 20.0
+			},
+			isStacked:  0
+		};
+
+		document.getElementById("draw_TOPDISK").addEventListener("click", function() {
+		if (chart && chart.clearChart) chart.clearChart();
+
+		chart = new google.visualization.AreaChart(document.getElementById("chart_master"));
+		chart.draw( data_TOPDISK, options_TOPDISK);
+		});
+
+			var data_NET = google.visualization.arrayToDataTable([
+[{type: 'datetime', label: 'Datetime' },'lo-read-KB/s','can0-read-KB/s','can1-read-KB/s','wlan0-read-KB/s','eth0-read-KB/s','l4tbr0-read-KB/s','usb0-read-KB/s','usb1-read-KB/s','docker0-read-KB/s','lo-write-KB/s','can0-write-KB/s','can1-write-KB/s','wlan0-write-KB/s','eth0-write-KB/s','l4tbr0-write-KB/s','usb0-write-KB/s','usb1-write-KB/s','docker0-write-KB/s']
+,['Date(2024,  2, 13, 06, 39, 10)',0.1,0.0,0.0,0.2,0.0,0.0,0.0,0.0,0.0,-0.1,-0.0,-0.0,-0.2,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 11)',0.0,0.0,0.0,0.6,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.4,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 12)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 13)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 14)',0.0,0.0,0.0,0.7,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.3,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 15)',0.0,0.0,0.0,0.1,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.3,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 16)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 17)',0.0,0.0,0.0,0.6,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.2,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 18)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.2,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 19)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 20)',0.0,0.0,0.0,0.6,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.4,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 21)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 22)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 23)',0.0,0.0,0.0,0.6,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.2,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 24)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.2,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 25)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 26)',0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.4,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 27)',0.0,0.0,0.0,0.2,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 28)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 29)',0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.2,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 30)',0.0,0.0,0.0,0.2,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.2,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 31)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 32)',0.0,0.0,0.0,0.6,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.4,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 33)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 34)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 35)',0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.2,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 36)',0.0,0.0,0.0,0.2,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.2,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 37)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 38)',0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.2,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 39)',0.0,0.0,0.0,0.2,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.2,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 40)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 41)',0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.2,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 42)',0.0,0.0,0.0,0.2,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.2,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 43)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 44)',0.0,0.0,0.0,0.6,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.2,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 45)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.2,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 46)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 47)',0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.2,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 48)',0.0,0.0,0.0,0.2,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.2,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 49)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 50)',0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.2,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 51)',0.0,0.0,0.0,0.2,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.2,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 52)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 53)',0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.4,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 54)',0.0,0.0,0.0,0.2,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 55)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 56)',0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.4,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 57)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 58)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0,-0.0]
+,['Date(2024,  2, 13, 06, 39, 59)',0.0,0.0,0.0,0.4,0.0,0.0,0.0,0.0,0.0,-0.0,-0.0,-0.0,-0.4,-0.0,-0.0,-0.0,-0.0,-0.0]
+		]);
+
+		var options_NET = {
+			chartArea: {left: "5%", width: "85%", top: "10%", height: "80%"},
+			title: "Network Receive(read) & Send(write shown negatively) in KB per second",
+			focusTarget: "category",
+			hAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 30
+				}
+			},
+			vAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 11
+				}
+			},
+			explorer: { actions: ["dragToZoom", "rightClickToReset"],
+				axis: "horizontal",
+				keepInBounds: true,
+				maxZoomIn: 20.0
+			},
+			isStacked:  0
+		};
+
+		document.getElementById("draw_NET").addEventListener("click", function() {
+		if (chart && chart.clearChart) chart.clearChart();
+
+		chart = new google.visualization.AreaChart(document.getElementById("chart_master"));
+		chart.draw( data_NET, options_NET);
+		});
+
+			var data_NETPACKET = google.visualization.arrayToDataTable([
+[{type: 'datetime', label: 'Datetime' },'lo-read/s','can0-read/s','can1-read/s','wlan0-read/s','eth0-read/s','l4tbr0-read/s','usb0-read/s','usb1-read/s','docker0-read/s','lo-write/s','can0-write/s','can1-write/s','wlan0-write/s','eth0-write/s','l4tbr0-write/s','usb0-write/s','usb1-write/s','docker0-write/s']
+,['Date(2024,  2, 13, 06, 39, 10)',1.6,0.0,0.0,1.6,0.0,0.0,0.0,0.0,0.0,1.6,0.0,0.0,1.6,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 11)',0.0,0.0,0.0,3.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 12)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 13)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 14)',0.0,0.0,0.0,4.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 15)',0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 16)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 17)',0.0,0.0,0.0,3.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 18)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 19)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 20)',0.0,0.0,0.0,3.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 21)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 22)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 23)',0.0,0.0,0.0,3.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 24)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 25)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 26)',0.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 27)',0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 28)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 29)',0.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 30)',0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 31)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 32)',0.0,0.0,0.0,3.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 33)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 34)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 35)',0.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 36)',0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 37)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 38)',0.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 39)',0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 40)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 41)',0.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 42)',0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 43)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 44)',0.0,0.0,0.0,3.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 45)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 46)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 47)',0.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 48)',0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 49)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 50)',0.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 51)',0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 52)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 53)',0.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 54)',0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 55)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 56)',0.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 57)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 58)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 59)',0.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0]
+		]);
+
+		var options_NETPACKET = {
+			chartArea: {left: "5%", width: "85%", top: "10%", height: "80%"},
+			title: "Network packet count per second",
+			focusTarget: "category",
+			hAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 30
+				}
+			},
+			vAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 11
+				}
+			},
+			explorer: { actions: ["dragToZoom", "rightClickToReset"],
+				axis: "horizontal",
+				keepInBounds: true,
+				maxZoomIn: 20.0
+			},
+			isStacked:  0
+		};
+
+		document.getElementById("draw_NETPACKET").addEventListener("click", function() {
+		if (chart && chart.clearChart) chart.clearChart();
+
+		chart = new google.visualization.AreaChart(document.getElementById("chart_master"));
+		chart.draw( data_NETPACKET, options_NETPACKET);
+		});
+
+			var data_DISKBUSY = google.visualization.arrayToDataTable([
+[{type: 'datetime', label: 'Datetime' },'loop0','loop1','loop2','loop3','loop4','mmcblk3','mmcblk3p1','mmcblk3p2','mmcblk3p3','mmcblk3p4','mmcblk3p5','mmcblk3p6','mmcblk3p7','mmcblk3p8','mmcblk3p9','mmcblk3p10','mmcblk3p11','mmcblk3p12','mmcblk3p13','mmcblk3p14','mmcblk3p15','mmcblk3boot0','mmcblk3boot1','zram0','zram1','zram2','zram3','zram4','zram5','zram6','zram7']
+,['Date(2024,  2, 13, 06, 39, 10)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 11)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 12)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 13)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 14)',0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 15)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 16)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 17)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 18)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 19)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 20)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 21)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 22)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 23)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 24)',0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 25)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 26)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 27)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 28)',0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 29)',0.0,0.0,0.0,0.0,0.0,1.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 30)',0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 31)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 32)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 33)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 34)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 35)',0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 36)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 37)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 38)',0.0,0.0,0.0,0.0,0.0,2.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 39)',0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 40)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 41)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 42)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 43)',0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 44)',0.0,0.0,0.0,0.0,0.0,1.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 45)',0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 46)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 47)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 48)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 49)',0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 50)',0.0,0.0,0.0,0.0,0.0,2.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 51)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 52)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 53)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 54)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 55)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 56)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 57)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 58)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 59)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+		]);
+
+		var options_DISKBUSY = {
+			chartArea: {left: "5%", width: "85%", top: "10%", height: "80%"},
+			title: "Disk Busy Percentage of the time (Stacked)",
+			focusTarget: "category",
+			hAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 30
+				}
+			},
+			vAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 11
+				}
+			},
+			explorer: { actions: ["dragToZoom", "rightClickToReset"],
+				axis: "horizontal",
+				keepInBounds: true,
+				maxZoomIn: 20.0
+			},
+			isStacked:  1
+		};
+
+		document.getElementById("draw_DISKBUSY").addEventListener("click", function() {
+		if (chart && chart.clearChart) chart.clearChart();
+
+		chart = new google.visualization.AreaChart(document.getElementById("chart_master"));
+		chart.draw( data_DISKBUSY, options_DISKBUSY);
+		});
+
+		var options_DISKBUSYu = {
+			chartArea: {left: "5%", width: "85%", top: "10%", height: "80%"},
+			title: "Disk Busy Percentage of the time (UnStacked)",
+			focusTarget: "category",
+			hAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 30
+				}
+			},
+			vAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 11
+				}
+			},
+			isStacked: 0
+		};
+
+		document.getElementById("draw_DISKBUSYu").addEventListener("click", function() {
+		if (chart && chart.clearChart) chart.clearChart();
+
+		chart = new google.visualization.AreaChart(document.getElementById("chart_master"));
+		chart.draw( data_DISKBUSY, options_DISKBUSYu);
+		});
+
+			var data_DISKREAD = google.visualization.arrayToDataTable([
+[{type: 'datetime', label: 'Datetime' },'loop0','loop1','loop2','loop3','loop4','mmcblk3','mmcblk3p1','mmcblk3p2','mmcblk3p3','mmcblk3p4','mmcblk3p5','mmcblk3p6','mmcblk3p7','mmcblk3p8','mmcblk3p9','mmcblk3p10','mmcblk3p11','mmcblk3p12','mmcblk3p13','mmcblk3p14','mmcblk3p15','mmcblk3boot0','mmcblk3boot1','zram0','zram1','zram2','zram3','zram4','zram5','zram6','zram7']
+,['Date(2024,  2, 13, 06, 39, 10)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 11)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 12)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 13)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 14)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 15)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 16)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 17)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 18)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 19)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 20)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 21)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 22)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 23)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 24)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 25)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 26)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 27)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 28)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 29)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 30)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 31)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 32)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 33)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 34)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 35)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 36)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 37)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 38)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 39)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 40)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 41)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 42)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 43)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 44)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 45)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 46)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 47)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 48)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 49)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 50)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 51)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 52)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 53)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 54)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 55)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 56)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 57)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 58)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 59)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+		]);
+
+		var options_DISKREAD = {
+			chartArea: {left: "5%", width: "85%", top: "10%", height: "80%"},
+			title: "Disk Read KB per second (Stacked)",
+			focusTarget: "category",
+			hAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 30
+				}
+			},
+			vAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 11
+				}
+			},
+			explorer: { actions: ["dragToZoom", "rightClickToReset"],
+				axis: "horizontal",
+				keepInBounds: true,
+				maxZoomIn: 20.0
+			},
+			isStacked:  1
+		};
+
+		document.getElementById("draw_DISKREAD").addEventListener("click", function() {
+		if (chart && chart.clearChart) chart.clearChart();
+
+		chart = new google.visualization.AreaChart(document.getElementById("chart_master"));
+		chart.draw( data_DISKREAD, options_DISKREAD);
+		});
+
+		var options_DISKREADu = {
+			chartArea: {left: "5%", width: "85%", top: "10%", height: "80%"},
+			title: "Disk Read KB per second (UnStacked)",
+			focusTarget: "category",
+			hAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 30
+				}
+			},
+			vAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 11
+				}
+			},
+			isStacked: 0
+		};
+
+		document.getElementById("draw_DISKREADu").addEventListener("click", function() {
+		if (chart && chart.clearChart) chart.clearChart();
+
+		chart = new google.visualization.AreaChart(document.getElementById("chart_master"));
+		chart.draw( data_DISKREAD, options_DISKREADu);
+		});
+
+			var data_DISKWRITE = google.visualization.arrayToDataTable([
+[{type: 'datetime', label: 'Datetime' },'loop0','loop1','loop2','loop3','loop4','mmcblk3','mmcblk3p1','mmcblk3p2','mmcblk3p3','mmcblk3p4','mmcblk3p5','mmcblk3p6','mmcblk3p7','mmcblk3p8','mmcblk3p9','mmcblk3p10','mmcblk3p11','mmcblk3p12','mmcblk3p13','mmcblk3p14','mmcblk3p15','mmcblk3boot0','mmcblk3boot1','zram0','zram1','zram2','zram3','zram4','zram5','zram6','zram7']
+,['Date(2024,  2, 13, 06, 39, 10)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 11)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 12)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 13)',0.0,0.0,0.0,0.0,0.0,12.0,12.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 14)',0.0,0.0,0.0,0.0,0.0,119.8,119.8,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 15)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 16)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 17)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 18)',0.0,0.0,0.0,0.0,0.0,39.9,39.9,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 19)',0.0,0.0,0.0,0.0,0.0,75.9,75.9,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 20)',0.0,0.0,0.0,0.0,0.0,12.0,12.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 21)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 22)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 23)',0.0,0.0,0.0,0.0,0.0,43.9,43.9,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 24)',0.0,0.0,0.0,0.0,0.0,31.9,31.9,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 25)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 26)',0.0,0.0,0.0,0.0,0.0,12.0,12.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 27)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 28)',0.0,0.0,0.0,0.0,0.0,43.9,43.9,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 29)',0.0,0.0,0.0,0.0,0.0,24.0,24.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 30)',0.0,0.0,0.0,0.0,0.0,16.0,16.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 31)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 32)',0.0,0.0,0.0,0.0,0.0,12.0,12.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 33)',0.0,0.0,0.0,0.0,0.0,39.9,39.9,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 34)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 35)',0.0,0.0,0.0,0.0,0.0,23.9,23.9,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 36)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 37)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 38)',0.0,0.0,0.0,0.0,0.0,59.9,59.9,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 39)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 40)',0.0,0.0,0.0,0.0,0.0,55.7,55.7,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 41)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 42)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 43)',0.0,0.0,0.0,0.0,0.0,4.0,4.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 44)',0.0,0.0,0.0,0.0,0.0,15.9,15.9,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 45)',0.0,0.0,0.0,0.0,0.0,19.9,19.9,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 46)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 47)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 48)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 49)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 50)',0.0,0.0,0.0,0.0,0.0,31.8,31.8,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 51)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 52)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 53)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 54)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 55)',0.0,0.0,0.0,0.0,0.0,19.9,19.9,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 56)',0.0,0.0,0.0,0.0,0.0,12.0,12.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 57)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 58)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 59)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+		]);
+
+		var options_DISKWRITE = {
+			chartArea: {left: "5%", width: "85%", top: "10%", height: "80%"},
+			title: "Disk Write KB per second (Stacked)",
+			focusTarget: "category",
+			hAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 30
+				}
+			},
+			vAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 11
+				}
+			},
+			explorer: { actions: ["dragToZoom", "rightClickToReset"],
+				axis: "horizontal",
+				keepInBounds: true,
+				maxZoomIn: 20.0
+			},
+			isStacked:  1
+		};
+
+		document.getElementById("draw_DISKWRITE").addEventListener("click", function() {
+		if (chart && chart.clearChart) chart.clearChart();
+
+		chart = new google.visualization.AreaChart(document.getElementById("chart_master"));
+		chart.draw( data_DISKWRITE, options_DISKWRITE);
+		});
+
+		var options_DISKWRITEu = {
+			chartArea: {left: "5%", width: "85%", top: "10%", height: "80%"},
+			title: "Disk Write KB per second (UnStacked)",
+			focusTarget: "category",
+			hAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 30
+				}
+			},
+			vAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 11
+				}
+			},
+			isStacked: 0
+		};
+
+		document.getElementById("draw_DISKWRITEu").addEventListener("click", function() {
+		if (chart && chart.clearChart) chart.clearChart();
+
+		chart = new google.visualization.AreaChart(document.getElementById("chart_master"));
+		chart.draw( data_DISKWRITE, options_DISKWRITEu);
+		});
+
+			var data_DISKBSIZE = google.visualization.arrayToDataTable([
+[{type: 'datetime', label: 'Datetime' },'loop0','loop1','loop2','loop3','loop4','mmcblk3','mmcblk3p1','mmcblk3p2','mmcblk3p3','mmcblk3p4','mmcblk3p5','mmcblk3p6','mmcblk3p7','mmcblk3p8','mmcblk3p9','mmcblk3p10','mmcblk3p11','mmcblk3p12','mmcblk3p13','mmcblk3p14','mmcblk3p15','mmcblk3boot0','mmcblk3boot1','zram0','zram1','zram2','zram3','zram4','zram5','zram6','zram7']
+,['Date(2024,  2, 13, 06, 39, 10)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 11)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 12)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 13)',0.0,0.0,0.0,0.0,0.0,12.0,12.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 14)',0.0,0.0,0.0,0.0,0.0,40.0,40.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 15)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 16)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 17)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 18)',0.0,0.0,0.0,0.0,0.0,20.0,20.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 19)',0.0,0.0,0.0,0.0,0.0,5.8,5.8,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 20)',0.0,0.0,0.0,0.0,0.0,6.0,6.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 21)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 22)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 23)',0.0,0.0,0.0,0.0,0.0,22.0,22.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 24)',0.0,0.0,0.0,0.0,0.0,16.0,16.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 25)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 26)',0.0,0.0,0.0,0.0,0.0,6.0,6.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 27)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 28)',0.0,0.0,0.0,0.0,0.0,44.0,44.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 29)',0.0,0.0,0.0,0.0,0.0,12.0,12.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 30)',0.0,0.0,0.0,0.0,0.0,4.0,4.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 31)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 32)',0.0,0.0,0.0,0.0,0.0,12.0,12.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 33)',0.0,0.0,0.0,0.0,0.0,20.0,20.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 34)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 35)',0.0,0.0,0.0,0.0,0.0,12.0,12.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 36)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 37)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 38)',0.0,0.0,0.0,0.0,0.0,30.0,30.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 39)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 40)',0.0,0.0,0.0,0.0,0.0,8.0,8.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 41)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 42)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 43)',0.0,0.0,0.0,0.0,0.0,4.0,4.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 44)',0.0,0.0,0.0,0.0,0.0,16.0,16.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 45)',0.0,0.0,0.0,0.0,0.0,10.0,10.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 46)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 47)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 48)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 49)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 50)',0.0,0.0,0.0,0.0,0.0,5.3,5.3,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 51)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 52)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 53)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 54)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 55)',0.0,0.0,0.0,0.0,0.0,10.0,10.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 56)',0.0,0.0,0.0,0.0,0.0,12.0,12.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 57)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 58)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 59)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+		]);
+
+		var options_DISKBSIZE = {
+			chartArea: {left: "5%", width: "85%", top: "10%", height: "80%"},
+			title: "Disk Block Size KB",
+			focusTarget: "category",
+			hAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 30
+				}
+			},
+			vAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 11
+				}
+			},
+			explorer: { actions: ["dragToZoom", "rightClickToReset"],
+				axis: "horizontal",
+				keepInBounds: true,
+				maxZoomIn: 20.0
+			},
+			isStacked:  0
+		};
+
+		document.getElementById("draw_DISKBSIZE").addEventListener("click", function() {
+		if (chart && chart.clearChart) chart.clearChart();
+
+		chart = new google.visualization.AreaChart(document.getElementById("chart_master"));
+		chart.draw( data_DISKBSIZE, options_DISKBSIZE);
+		});
+
+			var data_DISKXFER = google.visualization.arrayToDataTable([
+[{type: 'datetime', label: 'Datetime' },'loop0','loop1','loop2','loop3','loop4','mmcblk3','mmcblk3p1','mmcblk3p2','mmcblk3p3','mmcblk3p4','mmcblk3p5','mmcblk3p6','mmcblk3p7','mmcblk3p8','mmcblk3p9','mmcblk3p10','mmcblk3p11','mmcblk3p12','mmcblk3p13','mmcblk3p14','mmcblk3p15','mmcblk3boot0','mmcblk3boot1','zram0','zram1','zram2','zram3','zram4','zram5','zram6','zram7']
+,['Date(2024,  2, 13, 06, 39, 10)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 11)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 12)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 13)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 14)',0.0,0.0,0.0,0.0,0.0,3.0,3.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 15)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 16)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 17)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 18)',0.0,0.0,0.0,0.0,0.0,2.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 19)',0.0,0.0,0.0,0.0,0.0,13.0,13.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 20)',0.0,0.0,0.0,0.0,0.0,2.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 21)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 22)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 23)',0.0,0.0,0.0,0.0,0.0,2.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 24)',0.0,0.0,0.0,0.0,0.0,2.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 25)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 26)',0.0,0.0,0.0,0.0,0.0,2.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 27)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 28)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 29)',0.0,0.0,0.0,0.0,0.0,2.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 30)',0.0,0.0,0.0,0.0,0.0,4.0,4.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 31)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 32)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 33)',0.0,0.0,0.0,0.0,0.0,2.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 34)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 35)',0.0,0.0,0.0,0.0,0.0,2.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 36)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 37)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 38)',0.0,0.0,0.0,0.0,0.0,2.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 39)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 40)',0.0,0.0,0.0,0.0,0.0,7.0,7.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 41)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 42)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 43)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 44)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 45)',0.0,0.0,0.0,0.0,0.0,2.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 46)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 47)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 48)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 49)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 50)',0.0,0.0,0.0,0.0,0.0,6.0,6.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 51)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 52)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 53)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 54)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 55)',0.0,0.0,0.0,0.0,0.0,2.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 56)',0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 57)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 58)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+,['Date(2024,  2, 13, 06, 39, 59)',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+		]);
+
+		var options_DISKXFER = {
+			chartArea: {left: "5%", width: "85%", top: "10%", height: "80%"},
+			title: "Disk Transfers per second (Stacked)",
+			focusTarget: "category",
+			hAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 30
+				}
+			},
+			vAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 11
+				}
+			},
+			explorer: { actions: ["dragToZoom", "rightClickToReset"],
+				axis: "horizontal",
+				keepInBounds: true,
+				maxZoomIn: 20.0
+			},
+			isStacked:  1
+		};
+
+		document.getElementById("draw_DISKXFER").addEventListener("click", function() {
+		if (chart && chart.clearChart) chart.clearChart();
+
+		chart = new google.visualization.AreaChart(document.getElementById("chart_master"));
+		chart.draw( data_DISKXFER, options_DISKXFER);
+		});
+
+		var options_DISKXFERu = {
+			chartArea: {left: "5%", width: "85%", top: "10%", height: "80%"},
+			title: "Disk Transfers per second (UnStacked)",
+			focusTarget: "category",
+			hAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 30
+				}
+			},
+			vAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 11
+				}
+			},
+			isStacked: 0
+		};
+
+		document.getElementById("draw_DISKXFERu").addEventListener("click", function() {
+		if (chart && chart.clearChart) chart.clearChart();
+
+		chart = new google.visualization.AreaChart(document.getElementById("chart_master"));
+		chart.draw( data_DISKXFER, options_DISKXFERu);
+		});
+
+			var data_JFS = google.visualization.arrayToDataTable([
+[{type: 'datetime', label: 'Datetime' },'/','/dev','/run','/snap/snapd/20674','/snap/core20/2107','/snap/sublime-text/138']
+,['Date(2024,  2, 13, 06, 39, 10)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 11)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 12)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 13)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 14)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 15)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 16)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 17)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 18)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 19)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 20)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 21)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 22)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 23)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 24)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 25)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 26)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 27)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 28)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 29)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 30)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 31)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 32)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 33)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 34)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 35)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 36)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 37)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 38)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 39)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 40)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 41)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 42)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 43)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 44)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 45)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 46)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 47)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 48)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 49)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 50)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 51)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 52)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 53)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 54)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 55)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 56)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 57)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 58)',80.5,0.0,0.6,100.0,100.0,100.0]
+,['Date(2024,  2, 13, 06, 39, 59)',80.5,0.0,0.6,100.0,100.0,100.0]
+		]);
+
+		var options_JFS = {
+			chartArea: {left: "5%", width: "85%", top: "10%", height: "80%"},
+			title: "Journal File System Percent Full (Note: -1.234 = stats not avaialble)",
+			focusTarget: "category",
+			hAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 30
+				}
+			},
+			vAxis: {
+				gridlines: {
+					color: "lightgrey",
+					count: 11
+				}
+			},
+			explorer: { actions: ["dragToZoom", "rightClickToReset"],
+				axis: "horizontal",
+				keepInBounds: true,
+				maxZoomIn: 20.0
+			},
+			isStacked:  0
+		};
+
+		document.getElementById("draw_JFS").addEventListener("click", function() {
+		if (chart && chart.clearChart) chart.clearChart();
+
+		chart = new google.visualization.AreaChart(document.getElementById("chart_master"));
+		chart.draw( data_JFS, options_JFS);
+		});
+
+		}
+		</script>
+	</head>
+	 <body bgcolor="#EEEEFF">
+	nmon data file: <b>phi22.nmon</b>  
+	<button onclick="config()"><b>Configuration</b></button> 
+	<button id="draw_TOPDISK" style="color:black;"><b>Top Disk</b></button>
+	<br>
+	<button id="draw_CPU_UTIL" style="color:red;"><b>CPU Util.</b></button>
+	<button id="draw_CPU_USE" style="color:red;"><b>CPU Use</b></button>
+	<button id="draw_RUNQBLOCK" style="color:red;"><b>RunQ Blocked</b></button>
+	<button id="draw_PSWITCH" style="color:red;"><b>pSwitch</b></button>
+	<button id="draw_FORKEXEC" style="color:red;"><b>ForkExec</b></button>
+	<button id="draw_MEM_LINUX" style="color:blue;"><b>Memory</b></button>
+	<button id="draw_SWAP_LINUX" style="color:blue;"><b>Swap</b></button>
+<br>
+	<button id="draw_NET" style="color:purple;"><b>Network</b></button>
+	<button id="draw_NETPACKET" style="color:purple;"><b>Net Packet</b></button>
+	<button id="draw_DISKBUSY" style="color:brown;"><b>Disk Busy</b></button>
+	<button id="draw_DISKBUSYu" style="color:brown;"><b>Unstacked</b></button>
+	<button id="draw_DISKREAD" style="color:brown;"><b>Disk Read</b></button>
+	<button id="draw_DISKREADu" style="color:brown;"><b>Unstacked</b></button>
+	<button id="draw_DISKWRITE" style="color:brown;"><b>Disk Write</b></button>
+	<button id="draw_DISKWRITEu" style="color:brown;"><b>Unstacked</b></button>
+	<button id="draw_DISKBSIZE" style="color:brown;"><b>Disk BSize</b></button>
+	<button id="draw_DISKXFER" style="color:brown;"><b>Disk Xfers</b></button>
+	<button id="draw_DISKXFERu" style="color:brown;"><b>Unstacked</b></button>
+	<button id="draw_JFS" style="color:brown;"><b>JFS</b></button>
+
+	<div id="chart_master" style="width:100%; height:75%;">
+	<h2 style="color:blue">Click on a Graph button above, to display that graph</h2>
+	</div>
+
+<table><tr><td>
+<li>Host:ubuntu
+<li>Date:13-MAR-2024
+<li>Time:06:39.09
+<li>Interval:1
+<li>Snapshots: 50
+<td>
+<li>Number of CPUs:8
+<li>Number of Disks:31
+<li>Linux Kernel 5.15.122-tegra
+<li>Linux Version "# R36 (release)
+<td valign=top>
+<hr>
+<li><a href=http://nmon.sourceforge.net/pmwiki.php?n=Site.Nmonchart>nmonchart</a> v 42  by Nigel Griffiths @mr_nmon
+<li>Zoom-In: Left-click-on-Graph, Drag-Right & Let-Go
+<li>Zoom-Out: Right-click-on-Graph
+</table>
+	</body>
+</html>
