@@ -30,22 +30,31 @@ def get_disk_data():
     return [disk.total, disk.used, disk.free, disk.percent]
     
 def get_disk_busy_percentage(interval=1):
+    # Capture the start time
+    start_time = time.time()
+    
     disk_time = psutil.disk_io_counters(perdisk=False)
     initial_read_time = disk_time.read_time
     initial_write_time = disk_time.write_time
-    time.sleep(interval)
+    
+    # Sleep for the specified interval reduced by the execution time
+    time.sleep(max(0, interval - (time.time() - start_time)))
+    
     disk_time = psutil.disk_io_counters(perdisk=False)
     delta_read_time = disk_time.read_time - initial_read_time
     delta_write_time = disk_time.write_time - initial_write_time
-    delta_time = interval * 1000  # Convert seconds to milliseconds
+    end_time = time.time()  # Capture the end time after collecting data
+    
+    # Calculate the total time elapsed in milliseconds
+    elapsed_time = (end_time - start_time) * 1000
     
     # Calculate busy time as the sum of read and write time
     busy_time = delta_read_time + delta_write_time
-    # Disk busy percentage is the busy time divided by the total time observed (for all disks)
-    busy_percentage = (busy_time / delta_time) * 100 if delta_time > 0 else 0
+    
+    # Calculate the disk busy percentage
+    busy_percentage = (busy_time / elapsed_time) * 100 if elapsed_time > 0 else 0
     return busy_percentage
-
-
+    
 def get_swap_data():
     swap = psutil.swap_memory()
     return [swap.total, swap.used, swap.free, swap.percent]
@@ -82,9 +91,10 @@ def get_mac_swap_data():
                 swap_metrics.append(0.0)  # Append zero if there's an error
 
     return swap_metrics
-    
+
 swap_info = get_mac_swap_data()
-print(swap_info)
+print("Parsed swap data:", swap_info)  # Check the parsed output
+
 
 
 def write_data_to_csv(header, data_getter, filename, interval=1):
@@ -92,10 +102,15 @@ def write_data_to_csv(header, data_getter, filename, interval=1):
         writer = csv.writer(file)
         writer.writerow(header)
         while True:
-            data = [data_getter()]
-            writer.writerow(data)
+            data = data_getter()
+            if isinstance(data, list):  # Check if data is already a list
+                writer.writerow(data)
+            else:
+                writer.writerow([data])  # Wrap data in a list if it's not a list
             file.flush()  # Force buffer to write to disk
-            time.sleep(1)
+            time.sleep(interval)
+
+
 
 # Headers for CSV files
 cpu_header = ["User CPU%", "System CPU%", "Idle CPU%", "I/O Wait CPU%"]
@@ -116,7 +131,7 @@ disk_thread = threading.Thread(target=write_data_to_csv, args=(disk_header, get_
 context_switch_thread = threading.Thread(target=write_data_to_csv, args=(context_switch_header, get_context_switch_data, 'context_switches.csv'))
 process_thread = threading.Thread(target=write_data_to_csv, args=(process_header, get_process_count, 'process_count.csv'))
 swap_thread = threading.Thread(target=write_data_to_csv, args=(swap_header, get_mac_swap_data, 'swap_usage.csv'))
-disk_busy_thread = threading.Thread(target=write_data_to_csv, args=(disk_busy_header, get_disk_busy_percentage, 'disk_busy_percentage.csv', 1))
+disk_busy_thread = threading.Thread(target=write_data_to_csv, args=(disk_busy_header, get_disk_busy_percentage, 'disk_busy_percentage.csv'))
 
 
 
