@@ -30,10 +30,11 @@ We have used the wikitext2 dataset to evaluate the models. Also used a downsampl
 Data Visualization and Result: <br>
 Our experiment results are plotted as figures below so that they become easily representable.
 
-[TTFT.pdf](https://github.com/user-attachments/files/16094358/TTFT.pdf)
+![TTFT](https://github.com/Romyull-Islam/SLM/assets/23154358/0f99a02f-c5c2-40ee-9e34-3d9482600689)
 <br>
-[total generation time.pdf](https://github.com/user-attachments/files/16094375/total.generation.time.pdf)
+![total generation time](https://github.com/Romyull-Islam/SLM/assets/23154358/ac084920-8535-4f27-8088-4aaa2a205455)
 <br>
-[perplexity token f16.pdf](https://github.com/user-attachments/files/16094368/perplexity.token.f16.pdf)
+![perplexity token f16](https://github.com/Romyull-Islam/SLM/assets/23154358/84f1fecf-8708-4afa-b125-6699a76bd2c3)
 <br>
-[CPU_UTIL.pdf](https://github.com/user-attachments/files/16094419/CPU_UTIL.pdf)
+![CPU_UTIL](https://github.com/Romyull-Islam/SLM/assets/23154358/9e4f9276-dedb-4573-bc35-e0f02411cbb4)
+
