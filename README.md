@@ -97,3 +97,13 @@ If you use this work, please cite:
   year      = {2024}
 }
 ```
+
+## Related projects
+
+Part of my work on efficient LLM systems ([all projects](https://github.com/Romyull-Islam)):
+
+- [μKV (EndurKV)](https://github.com/Romyull-Islam/EndurKV): KV-cache eviction with in-place compaction for LLM inference on a phone
+- [SemSched](https://github.com/Romyull-Islam/SemSched): memory capacity vs. prefetch bandwidth for LLM inference on hybrid CXL devices
+- [AQLoRA](https://github.com/Romyull-Islam/AQLoRA): zero-search precision allocation for fast quantized LoRA fine-tuning
+- [VLM-Benchmarking](https://github.com/Romyull-Islam/VLM-Benchmarking): accuracy, time and energy of small vision-language models on Jetson AGX Orin
+- [Build, Train, Deploy](https://github.com/Romyull-Islam/llm_booklet): an open five-week LLM course in PyTorch
